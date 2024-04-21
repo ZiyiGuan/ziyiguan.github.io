@@ -6,9 +6,9 @@ html, body {
   padding: 0px;
   width: 100%;
   
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   
-  Background: rgb(250, 241, 228);
+  Background: rgb(255, 255, 255);
 }
 
 .name {
