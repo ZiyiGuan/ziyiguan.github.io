@@ -1,312 +1,434 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ziyi Guan</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyi Guan</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
+  <nav class="nav-bar">
+    <ul>
+        <li><a href="#papers">Papers</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#supervising">Supervising</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#employment">Employment</a></li>
+    </ul>
+</nav>
+    <header>
+        <div class="container">
+            <img src="profile_pic.jpg" alt="Your Name" class="profile-img">
+            <div class="bio">
+                <h1>Ziyi Guan</h1>
+                <p>I am a third-year Ph.D. student at the <a href="https://theory.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL theory group</a>, where I am fortunate to be advised by <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a> and <a href="https://theory.epfl.ch/mika/" target="_blank" rel="noopener noreferrer">Mika G&#246&#246s</a>. I am interested in Theoretical Computer Science, particularly complexity theory and cryptography.</p>
+                <p>Email: <a href="mailto:ziyi.guan@epfl.ch">ziyi.guan@epfl.ch</a></p>
+                <p>Google Scholar: <a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank">Ziyi Guan</a></p>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <section id="papers">
+            <h2>Papers</h2>
 
-  <div class="wrapper">
-    
-    <div class="left">
-      <img class="profile-picture" src="profile_pic.jpg" width="200"/>
-      <h1 class="name">Ziyi Guan</h1>
-      <h4 class="email">ziyi.guan@epfl.ch</h4>
-      <ul class="social-links">
-        <li><a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-        <li><a href="https://www.linkedin.com/in/ziyi-guan/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      </ul>
-      <p class="bio">
-        I am a third year Ph.D. student at the <a href='https://theory.epfl.ch/' target="_blank" rel="noopener noreferrer">EPFL theory group</a>, where I am fortunate to be advised by <a href='https://ic-people.epfl.ch/~achiesa/' target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a> and  <a href='https://theory.epfl.ch/mika/' target="_blank" rel="noopener noreferrer">Mika G&#246&#246s</a>. I am interested in Theoretical Computer Science, in particular complexity theory and cryptography.
-      </p>
+            <div class="paper-item">
+                <div class="paper-title">
+                    Breaking Verifiable Delay Functions in the Random Oracle Model
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract8')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2024/766" target="_blank" class="eprint-link">[eprint]</a>
+                </div>
+                <div class="paper-authors">
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://tunyash.github.io/" target="_blank" class="author-link">Artur Riazanov</a>,
+                    <a>Weiqiang Yuan</a>
+                </div>
+                <div id="abstract8" class="paper-abstract">
+                    <p>A verifiable delay function (VDF) is a cryptographic primitive that takes a long time to compute, but produces a unique output that is efficiently and publicly verifiable.</p>
+                    <p>Mahmoody, Smith, and Wu (ICALP 2020) prove that VDFs satisfying both perfect completeness and adaptive perfect uniqueness do not exist in the random oracle model. Moreover, Ephraim, Freitag, Komargodski, and Pass (EUROCRYPT 2020) construct a VDF with perfect completeness and computational uniqueness, a much weaker guarantee compared to perfect uniqueness, in the random oracle model under the repeated squaring assumption.</p>
+                    <p>In this work, we close the gap between existing constructions and known lower bounds by showing that VDFs with imperfect completeness and non-adaptive computational uniqueness cannot be constructed in the pure random oracle model (without additional computational assumptions).</p>
+                </div>
+            </div>
 
+            <div class="paper-item">
+                <div class="paper-title">
+                    Relativized Succinct Arguments in the ROM Do Not Exist
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract7')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2024/728" target="_blank" class="eprint-link">[ePrint]</a>
+                </div>
+                <div class="paper-authors">
+                    <a>Annalisa Barbara</a>,
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>
+                </div>
+                <div id="abstract7" class="paper-abstract">
+                    <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the ROM that can prove/verify the correctness of computations that involve queries to the random oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility holds even if the succinct argument is interactive, and even if soundness is computational (rather than statistical).</p>
+                    <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments require non-relativizing techniques. Moreover, our results stand in sharp contrast with other oracle models, for which a recent line of work has constructed relativized succinct non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that, e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this approach for IVC and PCD in the ROM.</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Quantum and Classical Communication Complexity of Permutation-Invariant Functions
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract6')">[abstract]</span>
+                    <a href="https://arxiv.org/abs/2401.00454" target="_blank" class="eprint-link">[arXiv]</a>
+                </div>
+                <div class="paper-authors">
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a>Yunqi Huang</a>,
+                    <a href="http://penghuiyao.info/" target="_blank" class="author-link">Penghui Yao</a>,
+                    <a>Zekun Ye</a>
+                </div>
+                <div class="paper-publisher">STACS 2024 (41st International Symposium on Theoretical Aspects of Computer Science)</div>
+                <div id="abstract6" class="paper-abstract">
+                    <p>This paper gives a nearly tight characterization of the quantum communication complexity of the permutation-invariant Boolean functions. With such a characterization, we show that the quantum and randomized communication complexity of the permutation-invariant Boolean functions are quadratically equivalent (up to a logarithmic factor). Our results extend a recent line of research regarding query complexity to communication complexity, showing symmetry prevents exponential quantum speedups.</p>
+                    <p>Furthermore, we show the Log-rank Conjecture holds for any non-trivial total permutation-invariant Boolean function. Moreover, we establish a relationship between the quantum/classical communication complexity and the approximate rank of permutation-invariant Boolean functions. This implies the correctness of the Log-approximate-rank Conjecture for permutation-invariant Boolean functions in both randomized and quantum settings (up to a logarithmic factor).</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    On the Security of Succinct Interactive Arguments from Vector Commitments
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract5')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2023/1737" target="_blank" class="eprint-link">[ePrint]</a>
+                      <a href="slides/kilian-pcp-iop.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                </div>
+                <div id="abstract5" class="paper-abstract">
+                    <p>We study the security of a fundamental family of succinct interactive arguments in the standard model, stemming from the works of Kilian (1992) and Ben-Sasson, Chiesa, and Spooner (``BCS'', 2016). These constructions achieve succinctness by combining probabilistic proofs and vector commitments.</p>
+                    <p>Our first result concerns the succinct interactive argument of Kilian, realized with any probabilistically-checkable proof (PCP) and any vector commitment. We establish the tightest known bounds on the security of this protocol. Prior analyses incur large overheads, or assume restrictive properties of the underlying PCP.</p>
+                    <p>Our second result concerns an interactive variant of the BCS succinct non-interactive argument, which here we call IBCS, realized with any public-coin interactive oracle proof (IOP) and any vector commitment. We establish the first security bounds for the IBCS protocol. Prior works rely upon this protocol without proving its security; our result closes this gap.</p>
+                    <p>Finally, we study the capabilities and limitations of succinct arguments based on vector commitments. We show that a generalization of the IBCS protocol, which we call the \emph{Finale protocol}, is secure when realized with any \emph{public-query} IOP (a notion that we introduce) that satisfies a natural ``random continuation sampling'' (RCS) property. We also show a partial converse: if the Finale protocol satisfies the RCS property (which in particular implies its security), then so does the underlying public-query IOP.</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    On Parallel Repetition of PCPs
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract4')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2023/1714" target="_blank" class="eprint-link">[ePrint]</a>
+                   <a href="slides/pr-pcp.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://burcu-yildiz.github.io/" target="_blank" class="author-link">Burcu Yıldız</a>
+                </div>
+                <div class="paper-publisher">ITCS 2024 (15th Innovations in Theoretical Computer Science)</div>
+                <div id="abstract4" class="paper-abstract">
+                    <p>Parallel repetition refers to a set of valuable techniques used to reduce soundness error of probabilistic proofs while saving on certain efficiency measures. Parallel repetition has been studied for interactive proofs (IPs) and multi-prover interactive proofs (MIPs). In this paper, we initiate the study of parallel repetition for probabilistically checkable proofs (PCPs).</p>
+                    <p>We show that, perhaps surprisingly, parallel repetition of a PCP can increase soundness error, in fact bringing the soundness error to one as the number of repetitions tends to infinity. This "failure" of parallel repetition is common: we find that it occurs for a wide class of natural PCPs for NP-complete languages. We explain this unexpected phenomenon by providing a characterization result: the parallel repetition of a PCP brings the soundness error to zero if and only if a certain "MIP projection" of the PCP has soundness error strictly less than one. We show that our characterization is tight via a suitable example. Moreover, for those cases where parallel repetition of a PCP does bring the soundness error to zero, the aforementioned connection to MIPs offers preliminary results on the rate of decay of the soundness error.</p>
+                    <p>Finally, we propose a simple variant of parallel repetition, called consistent parallel repetition (CPR), which has the same randomness complexity and query complexity as the plain variant of parallel repetition. We show that CPR brings the soundness error to zero for every PCP (with non-trivial soundness error). In fact, we show that CPR decreases the soundness error at an exponential rate in the repetition parameter.</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Security Bounds for Proof-Carrying Data from Straightline Extractors
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract3')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2023/1646" target="_blank" class="eprint-link">[ePrint]</a>
+                      <a href="slides/ROM-PCD.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a>Shahar Samocha</a>,
+                    <a href="https://www.eylonyogev.com/" target="_blank" class="author-link">Eylon Yogev</a>
+                </div>
+                <div class="paper-publisher">TCC 2024 (22nd Theory of Cryptography Conference)</div>
+                <div id="abstract3" class="paper-abstract">
+                    <p>Proof-carrying data (PCD) is a powerful cryptographic primitive that allows mutually distrustful parties to perform distributed computation in an efficiently verifiable manner. Real-world deployments of PCD have sparked keen interest within the applied community and industry.</p>
+                    <p>Known constructions of PCD are obtained by recursively-composing SNARKs or related primitives. Unfortunately, known security analyses incur expensive blowups, which practitioners have disregarded as the analyses would lead to setting parameters that are prohibitively expensive.</p>
+                    <p>In this work we study the concrete security of recursive composition, with the goal of better understanding how to reasonably set parameters for certain PCD constructions of practical interest. Our main result is that PCD obtained from SNARKs with \emph{straightline knowledge soundness} has essentially the same security as the underlying SNARK (i.e., recursive composition incurs essentially no security loss).</p>
+                    <p>We describe how straightline knowledge soundness is achieved by SNARKs in several oracle models, which results in a highly efficient security analysis of PCD that makes black-box use of the SNARK's oracle (there is no need to instantiated the oracle to carry out the security reduction).</p>
+                    <p>As a notable application, our work offers an idealized model that provides new, albeit heuristic, insights for the concrete security of \emph{recursive STARKs} used in blockchain systems. Our work could be viewed as partial evidence justifying the parameter choices for recursive STARKs made by practitioners.</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Depth-3 Circuits for Inner-Product
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">[abstract]</span>
+                    <a href="https://eccc.weizmann.ac.il/report/2023/106/" target="_blank" class="eprint-link">[ECCC]</a>
+                    <a href="slides/IP-depth-3.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://theory.epfl.ch/mika/" target="_blank" class="author-link">Mika G&#246&#246s</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a>Tiberiu Mosnoia</a>
+                </div>
+                <div class="paper-publisher">MFCS 2023 (48th International Symposium on Mathematical Foundations of Computer Science)</div>
+                <div class="paper-publisher">Information and Computation (invited to special issue on MFCS 2023)</div>
+                <div id="abstract2" class="paper-abstract">
+                  <p>What is the <span style="font-family: 'Times New Roman', serif;">Σ<sub>3</sub><sup>2</sup></span>-circuit complexity (depth 3, bottom-fanin 2) of the 2n-bit inner product function? The complexity is known to be exponential <span style="font-family: 'Times New Roman', serif;">2<sup>α<sub>n</sub>n</sup></span> for some <span style="font-family: 'Times New Roman', serif;">α<sub>n</sub>=Ω(1)</span>. We show that the limiting constant <span style="font-family: 'Times New Roman', serif;">α≔limsup α<sub>n</sub></span> satisfies:</p>
+
+<p style="text-align: center;">
+0.847... ≤ α ≤ 0.965...
+</p>
+
+<p>Determining <span style="font-family: 'Times New Roman', serif;">α</span> is one of the seemingly-simplest open problems about depth-3 circuits. The question was recently raised by Golovnev, Kulikov, and Williams (ITCS 2021) and Frankl, Gryaznov, and Talebanfard (ITCS 2022), who observed that <span style="font-family: 'Times New Roman', serif;">α ∈ [0.5, 1]</span>. To obtain our improved bounds, we analyze a covering LP that captures the <span style="font-family: 'Times New Roman', serif;">Σ<sub>3</sub><sup>2</sup></span>-complexity up to polynomial factors. In particular, our lower bound is proved by constructing a feasible solution to the dual LP.</p>
+
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Linear-Time Probabilistic Proofs with Sublinear Verification for Algebraic Automata Over Every Field
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2022/1056" target="_blank" class="eprint-link">[ePrint]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://jbootle.github.io/" target="_blank" class="author-link">Jonathan Bootle</a>,
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://siqi-l.github.io/" target="_blank" class="author-link">Siqi Liu</a>
+                </div>
+                <div id="abstract2" class="paper-abstract">
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="talks">
+    <h2>Talks</h2>
+
+    <div class="talk-item">
+        <div class="talk-title">
+            Security Bounds for Proof-Carrying Data from Straightline Extractors
+            <a href="slides/ROM-PCD.pdf" target="_blank" rel="noopener noreferrer" class="talk-slides-link">[slides]</a>
+        </div>
+        <div class="talk-details">
+            <ul style="margin-top:0px;margin-bottom:0px;">
+            	<li>[Sep 2, 2024] [30-minute version] <a href="https://swisscryptoday.github.io/2024/" target="_blank" rel="noopener noreferrer">Swiss Crypto Day</a>, University of St.Gallen</li>
+                <li>[May 25, 2024] [15-minute version] <a href="https://sites.google.com/view/crossfyre24/home" target="_blank" rel="noopener noreferrer">CrossFyre 24</a>, ETH Zurich</li>
+                <li>[March 21, 2024] <a href="https://sites.google.com/view/crypto-seminar/home" target="_blank" rel="noopener noreferrer">Crypto Seminar</a>, Carnegie Mellon University</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="talk-item">
+        <div class="talk-title">
+            On the Security of Succinct Interactive Arguments from Vector Commitments
+            <a href="slides/kilian-pcp-iop.pdf" target="_blank" rel="noopener noreferrer" class="talk-slides-link">[slides]</a>
+        </div>
+        <div class="talk-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>[February 21, 2024] <a href="https://cs.nyu.edu/crg/" target="_blank" rel="noopener noreferrer">Crypto Reading Group</a>, New York University</li>
+                <li>[February 7, 2024] <a href="https://cys-seminars.kcl.ac.uk/d/2024-02-07" target="_blank" rel="noopener noreferrer">CYS Research Seminar</a>, Kings College London</li>
+                <li>[January 25, 2024] <a href="https://www.biu.ac.il/en" target="_blank" rel="noopener noreferrer">Crypto Seminar</a>, Bar-Ilan University</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="talk-item">
+        <div class="talk-title">
+            On Parallel Repetition of PCPs
+            <a href="slides/pr-pcp.pdf" target="_blank" rel="noopener noreferrer" class="talk-slides-link">[slides]</a>
+        </div>
+        <div class="talk-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>[February 5, 2024] <a href="https://talks.cam.ac.uk/talk/index/211858" target="_blank" rel="noopener noreferrer">Algorithms and Complexity Seminar</a>, University of Cambridge</li>
+                <li>[January 24, 2024] <a href="https://didattica.unibocconi.eu/eventi/newsletter.php" target="_blank" rel="noopener noreferrer">Bocconi Seminar</a>, Bocconi University</li>
+                <li>[November 22, 2023] <a href="https://tcs.nju.edu.cn/" target="_blank" rel="noopener noreferrer">Theory Seminar</a>, Nanjing University</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="talk-item">
+        <div class="talk-title">
+            Depth-3 Circuits for Inner-Product
+            <a href="slides/IP-depth-3.pdf" target="_blank" rel="noopener noreferrer" class="talk-slides-link">[slides]</a>
+        </div>
+        <div class="talk-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>[August 31, 2023] <a href="https://mfcs2023.labri.fr/" target="_blank" rel="noopener noreferrer">MFCS 2023</a>, Bordeaux INP</li>
+                <li>[August 7, 2023] <a href="https://theory.epfl.ch/coffee/" target="_blank" rel="noopener noreferrer">Theory Coffee</a>, EPFL</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="supervising">
+    <h2>Supervising</h2>
+      <div class="supervising-item">
+        <div class="supervising-title">Sebastian Simon (Princeton University, Master in Computer Science)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2024.7-2024.9, Summer @ EPFL</li>
+            </ul>
+        </div>
     </div>
     
-<div class="right">
-<section>
-<h2>Papers</h2>
-<ol reversed>
-
-<li>
-Breaking Verifiable Delay Functions in the Random Oracle Model
- <a href="https://eprint.iacr.org/2024/766" target="_blank" rel="noopener noreferrer">[ePrint]<a> 
-<br>
-<i>Ziyi Guan</i>, <a href="https://tunyash.github.io/" target="_blank" rel="noopener noreferrer">Artur Riazanov</a>, and <a>Weiqiang Yuan</a>
-</p>
-</li>
-
-<li>
-Relativized Succinct Arguments in the ROM Do Not Exist <a href="https://eprint.iacr.org/2024/728" target="_blank" rel="noopener noreferrer">[ePrint]<a> 
-<br>
- <a>Annalisa Barbara</a>, <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>, and <i>Ziyi Guan</i>
-</p>
-</li>
-
-<li>
-<a>Quantum and Classical Communication Complexity of Permutation-Invariant Functions
-</a> <a href="https://arxiv.org/abs/2401.00454" target="_blank" rel="noopener noreferrer">[arXiv]<a>
-<br>
-<i>Ziyi Guan</i>, Yunqi Huang, <a href="http://penghuiyao.info/" target="_blank" rel="noopener noreferrer">Penghui Yao</a>, and Zekun Ye.
-<br>
-STACS 2024 (41st International Symposium on Theoretical Aspects of Computer Science)
-</p>
-</li>
-
-
-<li>
-On the Security of Succinct Interactive Arguments from Vector Commitments <a href="https://eprint.iacr.org/2023/1737" target="_blank" rel="noopener noreferrer">[ePrint]<a> <a href="slides/kilian-pcp-iop.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<br>
-<a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>, <a href="https://marceldallagnol.github.io/" target="_blank" rel="noopener noreferrer">Marcel Dall'Agnol</a>, <i>Ziyi Guan</i>, and <a href="https://spooner.cc/" target="_blank" rel="noopener noreferrer">Nicholas Spooner</a>.
-</p>
-</li>
-
-<li>
-On Parallel Repetition of PCPs <a href="https://eprint.iacr.org/2023/1714" target="_blank" rel="noopener noreferrer">[ePrint]<a> <a href="slides/pr-pcp.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<br>
-<a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>, <i>Ziyi Guan</i>, and <a href="https://burcu-yildiz.github.io/" target="_blank" rel="noopener noreferrer">Burcu Yıldız</a>.
-<br>
-ITCS 2024 (15th Innovations in Theoretical Computer Science)
-</p>
-</li>
-
-<li>
-Security Bounds for Proof-Carrying Data from Straightline Extractors <a href="https://eprint.iacr.org/2023/1646" target="_blank" rel="noopener noreferrer">[ePrint]<a><a href="slides/ROM-PCD.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<br>
-<a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>, <i>Ziyi Guan</i>, Shahar Samocha and <a href="https://www.eylonyogev.com/about" target="_blank" rel="noopener noreferrer">Eylon Yogev</a>.
-<br>
-TCC 2024 (22nd Theory of Cryptography Conference 2024)
-</p>
-</li>
-
-
-<li>
-Depth-3 Circuits for Inner-Product <a href="https://eccc.weizmann.ac.il/report/2023/106/" target="_blank" rel="noopener noreferrer">[ECCC]<a> <a href="slides/IP-depth-3.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<br>
-<a href='https://theory.epfl.ch/mika/' target="_blank" rel="noopener noreferrer">Mika G&#246&#246s</a>, <i>Ziyi Guan</i>, and Tiberiu Mosnoi.
-<br>
-MFCS 2023 (48th International Symposium on Mathematical Foundations of Computer Science)
-</p>
-</li>
-
-<li>
-Linear-Time Probabilistic Proofs with Sublinear Verification for Algebraic Automata Over Every Field <a href="https://eprint.iacr.org/2022/1056" target="_blank" rel="noopener noreferrer">[ePrint]<a>
-<br>
-<a href="https://jbootle.github.io/" target="_blank" rel="noopener noreferrer">Jonathan Bootle</a>, <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>, <i>Ziyi Guan</i>, and <a href="https://siqi-l.github.io/" target="_blank" rel="noopener noreferrer">Siqi Liu</a>.
-</p>
-</li>
-
-</ol>
+    <div class="supervising-item">
+        <div class="supervising-title">Mathias Marty (EPFL, Master in Computer Science)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2023.11-2024.6, EPFL Master's Thesis</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">Annalisa Barbara (Bocconi University, Master in Computer Science)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2023.9-2024.6</li>
+                <li>2023.6-2023.9, Summer @ EPFL</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">Keming Ouyang (University of Michigan, Ann Arbor, Bachelor in Computer Science)</div>
+        <div class="supervising-details">
+            <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2023.6-2023.9, Summer @ EPFL</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">
+            <a href="https://burcu-yildiz.github.io/" target="_blank" rel="noopener noreferrer">Burcu Yıldız</a> (EPFL, Master in Computer Science)
+        </div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+            	<li>2024.9-, EPFL Master's Thesis</li>
+                <li>2023.9-2024.6, EPFL Research Scholar</li>
+                <li>2023.3-2023.9, Master Semester Project</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">Nikolaos Efthymiou (EPFL, Master in Computer Science)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2023.1-2023.6, Master Semester Project</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">Zihan Yu (EPFL, Master in Computer Science)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+            	<li>2024.9-, EPFL Master's Thesis</li>
+                <li>2023.11-2024.9, Master Optional Semester Project</li>
+                <li>2022.1-2022.6, Master Semester Project</li>
+            </ul>
+        </div>
+    </div>
+    <div class="supervising-item">
+        <div class="supervising-title">Andrea Byku (ETH Zurich, Master in Cyber Security)</div>
+        <div class="supervising-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>2022.1-2022.6, Master Semester Project</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>Talks</h2>
-<ol reversed>
-
-<li>
-<a>Security Bounds for Proof-Carrying Data from Straightline Extractors</a> <a href="slides/ROM-PCD.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<br>
-<ul style="list-style-type:square">
-  <li>[May 25, 2024] [15-minute version] <a href="https://sites.google.com/view/crossfyre24/home"  target="_blank" rel="noopener noreferrer">CrossFyre 24</a>, ETH Zurich
-  <li>[March 21, 2024]  <a href="https://sites.google.com/view/crypto-seminar/home" target="_blank" rel="noopener noreferrer">Crypto Seminar</a>, Carnegie Mellon University
-</ul>
-</p>
-</li>
-
-
-<li>
-<a>On the Security of Succinct Interactive Arguments from Vector Commitments</a> <a href="slides/kilian-pcp-iop.pdf" target="_blank" rel="noopener noreferrer">[slides]<a>
-<ul style="list-style-type:square">
-  <li> [February 21, 2024] <a href="https://cs.nyu.edu/crg/" target="_blank" rel="noopener noreferrer">Crypto Reading Group</a>, New York University
-  <li> [February 7, 2024] <a href="https://cys-seminars.kcl.ac.uk/d/2024-02-07" target="_blank" rel="noopener noreferrer">CYS Research Seminar</a>, Kings Colledge London
-  <li> [January 25, 2024] <a href="https://www.biu.ac.il/en" target="_blank" rel="noopener noreferrer">Crypto Seminar</a>, Bar-Ilan University
-</ul>
-</p>
-</li>
-
-
-<li>
-<a>On Parallel Repetition of PCPs</a> <a href="slides/pr-pcp.pdf" target="_blank" rel="noopener noreferrer">[slides]<a> 
-<ul style="list-style-type:square">
-  <li> [February 5, 2024] <a href="https://talks.cam.ac.uk/talk/index/211858" target="_blank" rel="noopener noreferrer">Algorithms and Complexity Seminar</a>, Univeristy of Cambridge
-  <li> [January 24, 2024] <a href="https://didattica.unibocconi.eu/eventi/newsletter.php" target="_blank" rel="noopener noreferrer">Bocconi Seminar</a>, Bocconi University
-  <li> [November 22, 2023] <a href="https://tcs.nju.edu.cn/" target="_blank" rel="noopener noreferrer">Theory Seminar</a>, Nanjing University
-</ul>
-</p>
-</li>
-
-
-<li>
-<a>Depth-3 Circuits for Inner-Product</a> <a href="slides/IP-depth-3.pdf" target="_blank" rel="noopener noreferrer">[slides]<a> 
-<ul style="list-style-type:square">
-  <li> [August 31, 2023] <a href="https://mfcs2023.labri.fr/" target="_blank" rel="noopener noreferrer">MFCS 2023</a>, Bordeaux INP
-  <li> [August 7, 2023] <a href="https://theory.epfl.ch/coffee/" target="_blank" rel="noopener noreferrer">Theory Coffee</a>, EPFL
-</ul>
-</p>
-</li>
-
-
-</ol>
-</section>
-
-<section>
-<h2>Supervising</h2>
-<ol reversed>
-<li>
-Mathias Marty (EPFL, Master in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.11-2024.6, EPFL Master's Thesis
-</ul>
-</li>
-
-<li>
-Annalisa Barbara (Bocconi University, Master in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.9-2024.6
- <li> 2023.6-2023.9, Summer @ EPFL
-</ul>
-</li>
-
-<li>
-Keming Ouyang (University of Michigan, Ann Arbor, Bachelor in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.6-2023.9, Summer @ EPFL
-</ul>
-</li>
-<li>
-
-<a href="https://burcu-yildiz.github.io/" target="_blank" rel="noopener noreferrer">Burcu Yıldız</a> (EPFL, Master in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.9-2024.6, EPFL Research Scholar
- <li> 2023.3-2023.9, Master Semester Project
-</ul>
-</li>
-
-<li>
-Nikolaos Efthymiou (EPFL, Master in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.1-2023.6, Master Semester Project
-</ul>
-</li>
-<li>
-
-Zihan Yu (EPFL, Master in Computer Science)
-<ul style="list-style-type:square">
- <li> 2023.11- , Master Optional Semester Project
- <li> 2022.1-2022.6, Master Semester Project
-</ul>
-</li>
-<li>
-
-Andrea Byku (ETH Zurich, Master in Cyber Security)
-<ul style="list-style-type:square">
- <li> 2022.1-2022.6, Master Semester Project
-</ul>
-</li>
-</ol>
+<section id="teaching">
+    <h2>Teaching</h2>
+    <div class="teaching-container">
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2024] Head teaching assistant for
+                <a href='https://edu.epfl.ch/coursebook/en/theory-of-computation-CS-251' target="_blank" rel="noopener noreferrer">Theory of Computation</a> at EPFL
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Fall 2023] Teaching assistant for
+                <a href='https://people.eecs.berkeley.edu/~alexch/classes/CS459-F2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Summer 2023] Teaching assistant for
+                <a href='https://www.slmath.org/summer-schools/1037' target="_blank" rel="noopener noreferrer">Foundations and Frontiers of Probabilistic Proofs</a> at Zurich, Switzerland
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2023] Teaching assistant for
+                <a href='https://edu.epfl.ch/coursebook/en/theory-of-computation-CS-251' target="_blank" rel="noopener noreferrer">Theory of Computation</a> at EPFL
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Fall 2022] Teaching assistant for
+                <a href='https://people.eecs.berkeley.edu/~alexch/classes/CS459-F2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2022] Teaching assistant for
+                <a href='https://ic-people.epfl.ch/~achiesa/classes/CS602-S2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Fall 2020] Teaching assistant for
+                <a href='https://www.cs251.com/' target="_blank" rel="noopener noreferrer">Great Ideas in Theoretical Computer Science</a> at Carnegie Mellon University
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2020] Teaching assistant for Continuous Time Finance at Carnegie Mellon University</div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2020] Tutor for
+                <a href='https://www.cs251.com/' target="_blank" rel="noopener noreferrer">Great Ideas in Theoretical Computer Science</a> at Carnegie Mellon University
+            </div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Fall 2019] Teaching assistant for Discrete Time Finance at Carnegie Mellon University</div>
+        </div>
+        <div class="teaching-item">
+            <div class="teaching-title">[Spring 2019] Teaching assistant for Integration and Approximation at Carnegie Mellon University</div>
+        </div>
+    </div>
 </section>
 
 
-<section>
-<h2>Teaching</h2>
-<ol reversed>
+<section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+        <div class="education-title">&#201cole polytechnique f&#233d&#233rale de Lausanne <strong style="font-weight:normal"><small>2021.9 - </small></strong></div>
+        <div class="education-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>Ph.D. candidate in Computer Science</li>
+            </ul>
+        </div>
+    </div>
+    <div class="education-item">
+        <div class="education-title">Carnegie Mellon University <strong style="font-weight:normal"><small>2017.9 - 2020.12</small></strong></div>
+        <div class="education-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>Bachelor of Science in Computer Science with University Honors</li>
+                <li>Bachelor of Science in Mathematical Sciences with University Honors</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-<li>
-[Spring 2024] Head teaching assistant for <a href='https://edu.epfl.ch/coursebook/en/theory-of-computation-CS-251' target="_blank" rel="noopener noreferrer">Theory of Computation</a> at EPFL
-</li>
-
-
-<li>
-[Fall 2023] Teaching assistant for <a href='https://people.eecs.berkeley.edu/~alexch/classes/CS459-F2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
-</li>
-
-<li>
-[Summer 2023] Teaching assistant for <a href='https://www.slmath.org/summer-schools/1037' target="_blank" rel="noopener noreferrer">Foundations and Frontiers of Probabilistic Proofs</a> at Zurich, Switzerland
-</li>
-
-<li>
-[Spring 2023] Teaching assistant for <a href='https://edu.epfl.ch/coursebook/en/theory-of-computation-CS-251' target="_blank" rel="noopener noreferrer">Theory of Computation</a> at EPFL
-</li>
-
-<li>
-[Fall 2022] Teaching assistant for <a href='https://people.eecs.berkeley.edu/~alexch/classes/CS459-F2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
-</li>
-
-<li>
-[Spring 2022] Teaching assistant for <a href='https://ic-people.epfl.ch/~achiesa/classes/CS602-S2022.html' target="_blank" rel="noopener noreferrer">Foundation of Probabilistic Proofs</a> at EPFL
-</li>
-
-<li>
-[Fall 2020] Teaching assistant for <a href='https://www.cs251.com/' target="_blank" rel="noopener noreferrer">Great Ideas in Theoretical Computer Science</a> at Carnegie Mellon Univerisity
-</li>
-
-<li>
-[Spring 2020] Teaching assistant for Continuous Time Finance at Carnegie Mellon University
-</li>
-
-<li>
-[Spring 2020] Tutor for <a href='https://www.cs251.com/' target="_blank" rel="noopener noreferrer">Great Ideas in Theoretical Computer Science</a> at Carnegie Mellon University
-</li>
-
-<li>
-[Fall 2019] Teaching assistant for Discrete Time Finance at Carnegie Mellon University
-</li>
-
-<li>
-[Spring 2019] Teaching assistant for Integration and Approximation at Carnegie Mellon University
-</li>
-
-
-
-
-</ol>
+<section id="employment">
+    <h2>Employment</h2>
+    <div class="employment-item">
+        <div class="employment-title">Google <strong style="font-weight:normal"><small>2020.6 - 2020.8</small></strong></div>
+        <div class="employment-details">
+            <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>Software engineering intern at Shanghai, China</li>
+            </ul>
+        </div>
+    </div>
+    <div class="employment-item">
+        <div class="employment-title">Google <strong style="font-weight:normal"><small>2019.5 - 2019.8</small></strong></div>
+        <div class="employment-details">
+             <ul style="margin-top:0px;margin-bottom:0px;">
+                <li>Engineering practicum at Mountain View, CA, USA</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 
-
-<section>
-<h2>Education</h2>
-<ol reversed>
-<li>&#201cole polytechnique f&#233d&#233rale de Lausanne <strong style="font-weight:normal"><small>2021.9 - </small></strong>
-<ul style="list-style-type:square">
-  <li>Ph.D. candidate in Computer Science</li>
-</ul>
-</li>
-
-<li>Carnegie Mellon University <strong style="font-weight:normal"><small>2017.9 - 2020.12</small></strong>
-<ul style="list-style-type:square">
-  <li>Bachelor of Science in Computer Science with University Honors</li>
-  <li>Bachelor of Science in Mathematical Sciences with University Honors</li>
-</ul>
-</li>
-
-</ol>
-
-</section>
-
-<section>
-<h2>Employment</h2>
-<ol reversed>
-<li>Google <strong style="font-weight:normal"><small>2020.6 - 2020.8</small></strong>
-<ul style="list-style-type:square">
-  <li>Software engineering intern at Shanghai, China</li>
-</ul>
-</li>
-
-<li>Google <strong style="font-weight:normal"><small>2019.5 - 2019.8</small></strong>
-<ul style="list-style-type:square">
-  <li>Engineering practicum at Mountain View, CA, USA</li>
-</ul>
-</li>
-
-</ol>
-
-</section>
-
-</div>
-    
-</div>
-
+    </main>
 </body>
 </html>
