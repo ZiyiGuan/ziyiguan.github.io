@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -244,8 +245,6 @@ main {
     text-decoration: underline;
 }
 
-
-
 #education {
     margin-left: 40px;
     margin-right: 40px;
@@ -324,6 +323,7 @@ main {
     text-decoration: underline;
 }
 
+/* Navbar Styles */
 .nav-bar {
     width: 100%;
     background-color: rgb(158, 179, 132); /* Match the separating line color */
@@ -365,4 +365,97 @@ main {
 /* Ensure other content does not overlap the fixed nav bar */
 body {
     padding-top: 60px; /* Adjust based on the height of your nav bar */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    /* Profile image adjustments */
+    .profile-img {
+        width: 100px;
+        height: 130px;
+        margin: 0;
+    }
+
+    /* Bio adjustments */
+    .bio {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Nav bar adjustments */
+    .nav-bar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 16px;
+    }
+
+    /* Section and paper-item adjustments */
+    #papers, #talks, #supervising, #teaching, #education, #employment {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .paper-item, .talk-item, .supervising-item, .teaching-container, .education-item, .employment-item {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .paper-title, .talk-title, .supervising-title, .teaching-title, .education-title, .employment-title {
+        font-size: 16px;
+    }
+
+    .paper-authors, .talk-details, .supervising-details, .teaching-details, .education-details, .employment-details {
+        font-size: 14px;
+    }
+
+    .paper-abstract {
+        font-size: 14px;
+    }
+}
+
+/* Additional tweaks for very small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    /* General font size adjustments */
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 100px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Further reduce padding/margins */
+    #papers, #talks, #supervising, #teaching, #education, #employment {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .paper-item, .talk-item, .supervising-item, .teaching-container, .education-item, .employment-item {
+        padding: 10px;
+    }
 }
