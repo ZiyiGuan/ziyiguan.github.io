@@ -189,7 +189,7 @@
             <div class="paper-item">
                 <div class="paper-title">
                     Linear-Time Probabilistic Proofs with Sublinear Verification for Algebraic Automata Over Every Field
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract2')">[abstract]</span>
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract1')">[abstract]</span>
                     <a href="https://eprint.iacr.org/2022/1056" target="_blank" class="eprint-link">[ePrint]</a>
                 </div>
                 <div class="paper-authors">
@@ -198,8 +198,14 @@
                     <span class="author-emphasis">Ziyi Guan</span>,
                     <a href="https://siqi-l.github.io/" target="_blank" class="author-link">Siqi Liu</a>
                 </div>
-                <div id="abstract2" class="paper-abstract">
-                    <p></p>
+                <div id="abstract1" class="paper-abstract">
+                    <p>Interactive oracle proofs (IOPs) are a generalization of probabilistically checkable proofs that can be used to construct succinct arguments. Improvements in the efficiency of IOPs lead to improvements in the efficiency of succinct arguments. Key efficiency goals include achieving provers that run in linear time and verifiers that run in sublinear time, where the time complexity is with respect to the arithmetic complexity of proved computations over a finite field <span>&#120125;</span>.</p>
+
+<p>We consider the problem of constructing IOPs for any given finite field <span>&#120125;</span> with a linear-time prover and polylogarithmic query complexity. Several previous works have achieved these efficiency requirements with <em>O(1)</em> soundness error for NP-complete languages. However, constrained by the soundness error of the sumcheck protocol underlying these constructions, the IOPs achieve linear prover time only for instances in fields of size <span>&#8486;</span>(log <em>n</em>). Prior work (Ron-Zewi and Rothblum, STOC 2022) overcomes this problem, but with linear verification time.</p>
+
+<p>We construct IOPs for the algebraic automata problem over any finite field <span>&#120125;</span> with a linear-time prover, polylogarithmic query complexity, and sublinear verification complexity. We additionally prove a similar result to Ron-Zewi and Rothblum for the NP-complete language R1CS using different techniques. The IOPs imply succinct arguments for (nondeterministic) arithmetic computations over any finite field with linear-time proving (given black-box access to a linear-time collision-resistant hash function).</p>
+
+<p>Inspired by constructions of reverse-multiplication-friendly embeddings, our IOP constructions embed problem instances over small fields into larger fields and adapt previous IOP constructions to the new instances. The IOP provers are modeled as random access machines and use precomputation techniques to achieve linear prover time. In this way, we avoid having to replace the sumcheck protocol.</p>
                 </div>
             </div>
         </section>
