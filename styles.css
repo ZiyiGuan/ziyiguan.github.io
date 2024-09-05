@@ -139,6 +139,18 @@ main {
     text-decoration: underline;
 }
 
+.talk-video-link {
+    font-size: 14px;
+    color: #007bff;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.talk-videos-link:hover {
+    text-decoration: underline;
+}
+
+
 .talk-details {
     margin-top: 5px;
     font-size: 14px;
