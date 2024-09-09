@@ -41,6 +41,37 @@
     <main>
         <section id="papers">
             <h2>Papers</h2>
+            
+           <div class="paper-item">
+                <div class="paper-title">
+                    Untangling the Security of Kilian’s Protocol: Upper and Lower Bounds
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract9')">[abstract]</span>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>,
+                    <a href="https://www.eylonyogev.com/" target="_blank" class="author-link">Eylon Yogev</a>
+                </div>
+                <div class="paper-publisher">TCC 2024 (22nd Theory of Cryptography Conference)</div>
+                <div id="abstract9" class="paper-abstract">
+<p>Sigma protocols are elegant cryptographic proofs that have become a cornerstone of modern cryptography. A notable example is Schnorr's protocol, a zero-knowledge proof-of-knowledge of a discrete logarithm. Despite extensive research, the security of Schnorr's protocol in the standard model is not fully understood.</p>
+
+<p>In this paper we study <em>Kilian's protocol</em>, an influential public-coin interactive protocol that, while not a sigma protocol, shares striking similarities with sigma protocols. The first example of a succinct argument, Kilian's protocol is proved secure via <em>rewinding</em>, the same idea used to prove sigma protocols secure. In this paper we show how, similar to Schnorr's protocol, a precise understanding of the security of Kilian's protocol remains elusive. We contribute new insights via upper bounds and lower bounds.</p>
+
+<ul>
+  <li><em>Upper bounds.</em>
+    <p>We establish the tightest known bounds on the security of Kilian's protocol in the standard model, via strict-time reductions and via expected-time reductions. Prior analyses are strict-time reductions that incur large overheads or assume restrictive properties of the PCP underlying Kilian's protocol.</p>
+  </li>
+  
+  <li><em>Lower bounds.</em>
+    <p>We prove that significantly improving on the bounds that we establish for Kilian's protocol would imply improving the security analysis of Schnorr's protocol beyond the current state-of-the-art (an open problem). This partly explains the difficulties in obtaining tight bounds for Kilian's protocol.</p>
+  </li>
+</ul>
+                </div>
+            </div>
+
 
             <div class="paper-item">
                 <div class="paper-title">
