@@ -44,6 +44,32 @@
             
            <div class="paper-item">
                 <div class="paper-title">
+                    Quantum Rewinding for IOP-Based Succinct Arguments
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract10')">[abstract]</span>
+                 <a href="https://arxiv.org/abs/2411.05360" target="_blank" class="eprint-link">[arXiv]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <a>Zijing Di</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                </div>
+                <div id="abstract10" class="paper-abstract">
+<p>We analyze the post-quantum security of succinct interactive arguments constructed from interactive oracle proofs (IOPs) and vector commitment schemes. We prove that an interactive variant of the <em>BCS transformation</em> is secure in the standard model against quantum adversaries when the vector commitment scheme is collapsing.
+</p>
+
+<p>Our proof builds on and extends prior work on the post-quantum security of Kilian's succinct interactive argument, which is instead based on probabilistically checkable proofs (PCPs). We introduce a new quantum rewinding strategy that works across any number of rounds.
+</p>
+
+<p>
+As a consequence of our results, we obtain standard-model post-quantum secure succinct arguments with the best asymptotic complexity known.
+</p>
+                </div>
+            </div>
+            
+           <div class="paper-item">
+                <div class="paper-title">
                     Untangling the Security of Kilian’s Protocol: Upper and Lower Bounds
                  <span class="abstract-toggle" onclick="toggleAbstract('abstract9')">[abstract]</span>
                  <a href="https://eprint.iacr.org/2024/1434" target="_blank" class="eprint-link">[ePrint]</a>
@@ -86,9 +112,12 @@
                     <a>Weiqiang Yuan</a>
                 </div>
                 <div id="abstract8" class="paper-abstract">
-                    <p>A verifiable delay function (VDF) is a cryptographic primitive that takes a long time to compute, but produces a unique output that is efficiently and publicly verifiable.</p>
-                    <p>Mahmoody, Smith, and Wu (ICALP 2020) prove that VDFs satisfying both perfect completeness and adaptive perfect uniqueness do not exist in the random oracle model. Moreover, Ephraim, Freitag, Komargodski, and Pass (EUROCRYPT 2020) construct a VDF with perfect completeness and computational uniqueness, a much weaker guarantee compared to perfect uniqueness, in the random oracle model under the repeated squaring assumption.</p>
-                    <p>In this work, we close the gap between existing constructions and known lower bounds by showing that VDFs with imperfect completeness and non-adaptive computational uniqueness cannot be constructed in the pure random oracle model (without additional computational assumptions).</p>
+                    <p>This work resolves the open problem of whether verifiable delay functions (VDFs) can be constructed in the random oracle model.
+A VDF is a cryptographic primitive that requires a long time to compute (even with parallelization), but produces a unique output that is efficiently and publicly verifiable. </p>
+                    <p>We prove that VDFs with <em>imperfect completeness</em> and <em>computational uniqueness</em> do not exist in the random oracle model. This also rules out black-box constructions of VDFs from other cryptographic primitives, such as one-way permutations and collision-resistant hash functions.</p>
+                    <p>Prior to our work, Mahmoody, Smith and Wu (ICALP 2020) prove that VDFs satisfying both <em>perfect completeness</em> and <em>perfect uniqueness</em> do not exist in the random oracle model; on the other hand, Ephraim, Freitag, Komargodski, and Pass (Eurocrypt 2020) construct VDFs with <em>perfect completeness</em> and <em>computational uniqueness</em> in the random oracle model assuming the hardness of repeated squaring. Our result is optimal -- we bridge the current gap between previously known impossibility results and existing constructions.
+
+</p>
                 </div>
             </div>
 
@@ -145,7 +174,7 @@
                     <p>We study the security of a fundamental family of succinct interactive arguments in the standard model, stemming from the works of Kilian (1992) and Ben-Sasson, Chiesa, and Spooner (``BCS'', 2016). These constructions achieve succinctness by combining probabilistic proofs and vector commitments.</p>
                     <p>Our first result concerns the succinct interactive argument of Kilian, realized with any probabilistically-checkable proof (PCP) and any vector commitment. We establish the tightest known bounds on the security of this protocol. Prior analyses incur large overheads, or assume restrictive properties of the underlying PCP.</p>
                     <p>Our second result concerns an interactive variant of the BCS succinct non-interactive argument, which here we call IBCS, realized with any public-coin interactive oracle proof (IOP) and any vector commitment. We establish the first security bounds for the IBCS protocol. Prior works rely upon this protocol without proving its security; our result closes this gap.</p>
-                    <p>Finally, we study the capabilities and limitations of succinct arguments based on vector commitments. We show that a generalization of the IBCS protocol, which we call the \emph{Finale protocol}, is secure when realized with any \emph{public-query} IOP (a notion that we introduce) that satisfies a natural ``random continuation sampling'' (RCS) property. We also show a partial converse: if the Finale protocol satisfies the RCS property (which in particular implies its security), then so does the underlying public-query IOP.</p>
+                    <p>Finally, we study the capabilities and limitations of succinct arguments based on vector commitments. We show that a generalization of the IBCS protocol, which we call the <em>Finale protocol</em>, is secure when realized with any </em>public-query</em> IOP (a notion that we introduce) that satisfies a natural ``random continuation sampling'' (RCS) property. We also show a partial converse: if the Finale protocol satisfies the RCS property (which in particular implies its security), then so does the underlying public-query IOP.</p>
                 </div>
             </div>
 
@@ -186,9 +215,9 @@
                 <div id="abstract3" class="paper-abstract">
                     <p>Proof-carrying data (PCD) is a powerful cryptographic primitive that allows mutually distrustful parties to perform distributed computation in an efficiently verifiable manner. Real-world deployments of PCD have sparked keen interest within the applied community and industry.</p>
                     <p>Known constructions of PCD are obtained by recursively-composing SNARKs or related primitives. Unfortunately, known security analyses incur expensive blowups, which practitioners have disregarded as the analyses would lead to setting parameters that are prohibitively expensive.</p>
-                    <p>In this work we study the concrete security of recursive composition, with the goal of better understanding how to reasonably set parameters for certain PCD constructions of practical interest. Our main result is that PCD obtained from SNARKs with \emph{straightline knowledge soundness} has essentially the same security as the underlying SNARK (i.e., recursive composition incurs essentially no security loss).</p>
+                    <p>In this work we study the concrete security of recursive composition, with the goal of better understanding how to reasonably set parameters for certain PCD constructions of practical interest. Our main result is that PCD obtained from SNARKs with <em>straightline knowledge soundness</em> has essentially the same security as the underlying SNARK (i.e., recursive composition incurs essentially no security loss).</p>
                     <p>We describe how straightline knowledge soundness is achieved by SNARKs in several oracle models, which results in a highly efficient security analysis of PCD that makes black-box use of the SNARK's oracle (there is no need to instantiated the oracle to carry out the security reduction).</p>
-                    <p>As a notable application, our work offers an idealized model that provides new, albeit heuristic, insights for the concrete security of \emph{recursive STARKs} used in blockchain systems. Our work could be viewed as partial evidence justifying the parameter choices for recursive STARKs made by practitioners.</p>
+                    <p>As a notable application, our work offers an idealized model that provides new, albeit heuristic, insights for the concrete security of <em>recursive STARKs</em> used in blockchain systems. Our work could be viewed as partial evidence justifying the parameter choices for recursive STARKs made by practitioners.</p>
                 </div>
             </div>
 
