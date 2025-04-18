@@ -56,7 +56,7 @@ main {
 }
 
 .paper-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -122,7 +122,7 @@ main {
 }
 
 .talk-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -184,7 +184,7 @@ main {
 }
 
 .supervising-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -270,7 +270,7 @@ main {
 }
 
 .education-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -309,7 +309,7 @@ main {
 }
 
 .employment-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -538,3 +538,140 @@ body {
         padding-top: 60px;
     }
 }
+/* override.css */
+/* 1) Remove box backgrounds, borders and shadows */
+.paper-item,
+.talk-item,
+.supervising-item,
+.education-item,
+.employment-item,
+.teaching-container {
+  background-color: transparent !important;
+  border: none                !important;
+  box-shadow: none            !important;
+  padding: 0                  !important;
+  /* keep a little vertical rhythm */
+  margin-bottom: 1rem         !important;
+}
+
+/* 2) Flatten the abstract panels */
+.paper-abstract {
+  background-color: transparent !important;
+  border-top: none            !important;
+  padding: 0                  !important;
+  margin-top: 0               !important;
+}
+
+/* 3) (Optional) Reset left/right offsets on section wrappers */
+#papers, #talks, #supervising, #teaching, #education, #employment {
+  margin-left: 0   !important;
+  margin-right: 0  !important;
+  padding: 0       !important;
+}
+
+/* 4) If you still want thin separators between items, you can re‑introduce them */
+.paper-item + .paper-item,
+.talk-item + .talk-item,
+.supervising-item + .supervising-item,
+.education-item + .education-item,
+.employment-item + .employment-item,
+.teaching-item + .teaching-item {
+  border-top: 1px solid #ccc !important;
+  padding-top: 1rem         !important;
+}
+
+/* === REMOVE ITEM SEPARATORS === */
+
+/* Target back-to-back items and kill any borders or extra top‑padding */
+.paper-item + .paper-item,
+.talk-item + .talk-item,
+.supervising-item + .supervising-item,
+.education-item + .education-item,
+.employment-item + .employment-item,
+.teaching-item + .teaching-item {
+  border-top: none    !important;
+  margin-top: 0       !important;
+  padding-top: 0      !important;
+}
+
+/* === SIMPLE UNDERLINE FOR SECTION HEADERS === */
+
+/* override.css */
+body section h2 {
+  border-bottom: 2px solid rgba(156, 175, 136, 0.3) !important;
+  padding-bottom: 0.25rem     !important;
+  margin-bottom: 1rem       !important;
+}
+
+/* style for the auto‑prepended numbers */
+.reverse‑num {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+/* === MAKE ALL ITEM TITLES NORMAL WEIGHT === */
+.paper-title,
+.talk-title,
+.supervising-title,
+.teaching-title,
+.education-title,
+.employment-title {
+  font-weight: normal !important;
+}
+
+/* === BOXED STYLE FOR ABSTRACT PANELS === */
+.paper-abstract {
+  /* light grey background for contrast */
+  background-color: #f9f9f9 !important;
+  /* subtle border to define the box */
+  border: 1px solid #ddd !important;
+  /* rounded corners for polish */
+  border-radius: 4px !important;
+  /* inner padding so text doesn’t touch the edges */
+  padding: 0.25rem 1rem  !important;
+  /* spacing above/below to separate from other items */
+  margin: 1rem 0 !important;
+}
+
+/* ==========================================================================
+   EXPAND HORIZONTAL GUTTER FOR ALL SECTIONS
+   ========================================================================== */
+#papers,
+#talks,
+#supervising,
+#teaching,
+#education,
+#employment {
+  /* bump left/right margins from 40px up to 80px */
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+
+/* keep your mobile breakpoints in sync (optional) */
+@media (max-width: 768px) {
+  #papers,
+  #talks,
+  #supervising,
+  #teaching,
+  #education,
+  #employment {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}
+@media (max-width: 770px) {
+  #papers,
+  #talks,
+  #supervising,
+  #teaching,
+  #education,
+  #employment {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+}
+
+
+
+

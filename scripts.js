@@ -8,16 +8,28 @@ function toggleAbstract(id) {
     }
 }
 
-// JavaScript to automatically number papers in reverse order
+// JavaScript to automatically reverse‑number items in multiple sections
 document.addEventListener("DOMContentLoaded", function() {
-    var papers = document.querySelectorAll('.paper-item');
-    var number = papers.length;
-    papers.forEach(function(paper) {
-        var title = paper.querySelector('.paper-title');
-        title.innerHTML = number + '. ' + title.innerHTML;
-        number--;
+  const sections = [
+    { itemSelector: '.paper-item',      titleSelector: '.paper-title'      },
+    { itemSelector: '.talk-item',       titleSelector: '.talk-title'       },
+    { itemSelector: '.supervising-item',titleSelector: '.supervising-title' },
+    { itemSelector: '.teaching-item',   titleSelector: '.teaching-title'   },
+  ];
+
+  sections.forEach(({itemSelector, titleSelector}) => {
+    const items = document.querySelectorAll(itemSelector);
+    let n = items.length;
+    items.forEach(item => {
+      const titleEl = item.querySelector(titleSelector);
+      if (titleEl) {
+        titleEl.innerHTML = `${n}. ${titleEl.innerHTML}`;
+      }
+      n--;
     });
+  });
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById('hamburger');
