@@ -53,6 +53,28 @@
         <section id="papers">
             <h2>Papers</h2>
             
+           <div class="paper-item">
+                <div class="paper-title">
+                    On the Fiat&#8211Shamir Security of Succinct Arguments from Functional Commitments
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract12')">[abstract]</span>
+                 <a href="https://eprint.iacr.org/2025/902" target="_blank" class="eprint-link">[ePrint]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://cknabs.github.io/" target="_blank" class="author-link">Christian Knabenhans</a>,
+                    <a>Zihan Yu</a>
+                </div>
+                <div id="abstract12" class="paper-abstract">
+<p>We study the security of a popular paradigm for constructing SNARGs, closing a key security gap left open by prior work. The paradigm consists of two steps: first, construct a public-coin succinct interactive argument by combining a functional interactive oracle proof (FIOP) and a functional commitment scheme (FC scheme); second, apply the Fiat&#8211Shamir transformation in the random oracle model. Prior work did not consider this generalized setting nor prove the security of this second step (even in special cases).</p>
+
+<p>We prove that the succinct argument obtained in the first step satisfies state-restoration security, thereby ensuring that the second step does in fact yield a succinct non-interactive argument. This is provided the FIOP satisfies state-restoration security and the FC scheme satisfies a natural state-restoration variant of function binding (a generalization of position binding for vector commitment schemes).</p>
+
+<p>Moreover, we prove that notable FC schemes satisfy state-restoration function binding, allowing us to establish, via our main result, the security of several SNARGs of interest (in the random oracle model). This includes a security proof of Plonk, in the ROM, based on ARSDH (a falsifiable assumption).
+</p>
+                </div>
+            </div>
+            
                 <div class="paper-item">
                 <div class="paper-title">
                     Generalised Linial-Nisan Conjecture is False for DNFs
