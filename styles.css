@@ -257,83 +257,7 @@ main {
     text-decoration: underline;
 }
 
-#education {
-    margin-left: 40px;
-    margin-right: 40px;
-}
 
-.education-item {
-    margin-bottom: 13px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
-
-.education-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
-    margin: 0;
-}
-
-.education-details {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #555;
-}
-
-.education-details ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-.education-details a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.education-details a:hover {
-    text-decoration: underline;
-}
-
-#employment {
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-.employment-item {
-    margin-bottom: 13px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
-
-.employment-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
-    margin: 0;
-}
-
-.employment-details {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #555;
-}
-
-.employment-details ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-.employment-details a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.employment-details a:hover {
-    text-decoration: underline;
-}
 
 /* Navbar Styles */
 .nav-bar {
@@ -413,21 +337,21 @@ body {
     }
 
     /* Section and paper-item adjustments */
-    #papers, #talks, #supervising, #teaching, #education, #employment {
+    #papers, #talks, #supervising, #teaching {
         margin-left: 20px;
         margin-right: 20px;
     }
 
-    .paper-item, .talk-item, .supervising-item, .teaching-container, .education-item, .employment-item {
+    .paper-item, .talk-item, .supervising-item, .teaching-container {
         padding: 15px;
         margin-bottom: 20px;
     }
 
-    .paper-title, .talk-title, .supervising-title, .teaching-title, .education-title, .employment-title {
+    .paper-title, .talk-title, .supervising-title, .teaching-title {
         font-size: 16px;
     }
 
-    .paper-authors, .talk-details, .supervising-details, .teaching-details, .education-details, .employment-details {
+    .paper-authors, .talk-details, .supervising-details, .teaching-details {
         font-size: 14px;
     }
 
@@ -543,8 +467,6 @@ body {
 .paper-item,
 .talk-item,
 .supervising-item,
-.education-item,
-.employment-item,
 .teaching-container {
   background-color: transparent !important;
   border: none                !important;
@@ -563,7 +485,7 @@ body {
 }
 
 /* 3) (Optional) Reset left/right offsets on section wrappers */
-#papers, #talks, #supervising, #teaching, #education, #employment {
+#papers, #talks, #supervising, #teaching{
   margin-left: 0   !important;
   margin-right: 0  !important;
   padding: 0       !important;
@@ -573,8 +495,6 @@ body {
 .paper-item + .paper-item,
 .talk-item + .talk-item,
 .supervising-item + .supervising-item,
-.education-item + .education-item,
-.employment-item + .employment-item,
 .teaching-item + .teaching-item {
   border-top: 1px solid #ccc !important;
   padding-top: 1rem         !important;
@@ -586,8 +506,6 @@ body {
 .paper-item + .paper-item,
 .talk-item + .talk-item,
 .supervising-item + .supervising-item,
-.education-item + .education-item,
-.employment-item + .employment-item,
 .teaching-item + .teaching-item {
   border-top: none    !important;
   margin-top: 0       !important;
@@ -614,9 +532,7 @@ body section h2 {
 .paper-title,
 .talk-title,
 .supervising-title,
-.teaching-title,
-.education-title,
-.employment-title {
+.teaching-title {
   font-weight: normal !important;
 }
 
@@ -640,9 +556,7 @@ body section h2 {
 #papers,
 #talks,
 #supervising,
-#teaching,
-#education,
-#employment {
+#teaching {
   /* bump left/right margins from 40px up to 80px */
   margin-left: 40px !important;
   margin-right: 40px !important;
@@ -653,9 +567,7 @@ body section h2 {
   #papers,
   #talks,
   #supervising,
-  #teaching,
-  #education,
-  #employment {
+  #teaching {
     margin-left: 10px !important;
     margin-right: 10px !important;
   }
@@ -664,9 +576,7 @@ body section h2 {
   #papers,
   #talks,
   #supervising,
-  #teaching,
-  #education,
-  #employment {
+  #teaching {
     margin-left: 10px !important;
     margin-right: 10px !important;
   }
