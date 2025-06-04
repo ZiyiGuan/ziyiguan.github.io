@@ -53,31 +53,7 @@
         <section id="papers">
             <h2>Papers</h2>
             
-           <div class="paper-item">
-                <div class="paper-title">
-                    On the Fiat&#8211Shamir Security of Succinct Arguments from Functional Commitments
-                 <span class="abstract-toggle" onclick="toggleAbstract('abstract12')">[abstract]</span>
-                 <a href="https://eprint.iacr.org/2025/902" target="_blank" class="eprint-link">[ePrint]</a>
-                 <a href="https://www.youtube.com/live/pAm225U1s9c" target="_blank" rel="noopener noreferrer" class="eprint-link">[talk by Christian]</a>
-                </div>
-                <div class="paper-authors">
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://cknabs.github.io/" target="_blank" class="author-link">Christian Knabenhans</a>,
-                    <a>Zihan Yu</a>
-                </div>
-                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
-                <div id="abstract12" class="paper-abstract">
-<p>We study the security of a popular paradigm for constructing SNARGs, closing a key security gap left open by prior work. The paradigm consists of two steps: first, construct a public-coin succinct interactive argument by combining a functional interactive oracle proof (FIOP) and a functional commitment scheme (FC scheme); second, apply the Fiat&#8211Shamir transformation in the random oracle model. Prior work did not consider this generalized setting nor prove the security of this second step (even in special cases).</p>
-
-<p>We prove that the succinct argument obtained in the first step satisfies state-restoration security, thereby ensuring that the second step does in fact yield a succinct non-interactive argument. This is provided the FIOP satisfies state-restoration security and the FC scheme satisfies a natural state-restoration variant of function binding (a generalization of position binding for vector commitment schemes).</p>
-
-<p>Moreover, we prove that notable FC schemes satisfy state-restoration function binding, allowing us to establish, via our main result, the security of several SNARGs of interest (in the random oracle model). This includes a security proof of Plonk, in the ROM, based on ARSDH (a falsifiable assumption).
-</p>
-                </div>
-            </div>
-            
-                <div class="paper-item">
+               <div class="paper-item">
                 <div class="paper-title">
                     Generalised Linial-Nisan Conjecture is False for DNFs
                  <span class="abstract-toggle" onclick="toggleAbstract('abstract11')">[abstract]</span>
@@ -99,34 +75,31 @@ Aaronson (STOC 2010) conjectured that almost k-wise independence fools constant-
 </p>
                 </div>
             </div>
-
             
-           <div class="paper-item">
+
+            <div class="paper-item">
                 <div class="paper-title">
-                    Quantum Rewinding for IOP-Based Succinct Arguments
-                 <span class="abstract-toggle" onclick="toggleAbstract('abstract10')">[abstract]</span>
-                 <a href="https://eprint.iacr.org/2025/947" target="_blank" class="eprint-link">[ePrint]</a>
-                  <a href="slides/postquantum-ibcs.pdf" target="_blank" class="slides-link">[slides]</a>
+                    Breaking Verifiable Delay Functions in the Random Oracle Model
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract8')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2024/766" target="_blank" class="eprint-link">[ePrint]</a>
+                    <a href="slides/VDF-uniqueness.pdf" target="_blank" class="slides-link">[slides]</a>
+                    <a href="https://tunyash.github.io/vdf_slides.html" target="_blank" class="slides-link">[slides by Artur]</a>
                 </div>
                 <div class="paper-authors">
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
-                    <a>Zijing Di</a>,
                     <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                    <a href="https://tunyash.github.io/" target="_blank" class="author-link">Artur Riazanov</a>,
+                    <a href="https://wwwaltzzz.github.io/" target="_blank" class="author-link">Weiqiang Yuan</a>
                 </div>
-                <div id="abstract10" class="paper-abstract">
-<p>We analyze the post-quantum security of succinct interactive arguments constructed from interactive oracle proofs (IOPs) and vector commitment schemes. We prove that an interactive variant of the <em>BCS transformation</em> is secure in the standard model against quantum adversaries when the vector commitment scheme is collapsing.
-</p>
-
-<p>Our proof builds on and extends prior work on the post-quantum security of Kilian's succinct interactive argument, which is instead based on probabilistically checkable proofs (PCPs). We introduce a new quantum rewinding strategy that works across any number of rounds.
-</p>
-
-<p>
-As a consequence of our results, we obtain standard-model post-quantum secure succinct arguments with the best asymptotic complexity known.
-</p>
+                <div class="paper-publisher">Crypto 2025 (45th Annual International Cryptology Conference)</div>
+                <div id="abstract8" class="paper-abstract">
+                    <p>This work resolves the open problem of whether verifiable delay functions (VDFs) can be constructed in the random oracle model.
+A VDF is a cryptographic primitive that requires a long time to compute (even with parallelization), but produces a unique output that is efficiently and publicly verifiable.  </p>
+                    <p>We prove that VDFs do not exist in the random oracle model. This also rules out black-box constructions of VDFs from other cryptographic primitives, such as one-way functions, one-way permutations and collision-resistant hash functions.</p>
+                    <p>Prior to our work, Mahmoody, Smith and Wu (ICALP 2020) prove that <em>perfectly unique</em> VDFs (a much stronger form of VDFs) do not exist in the random oracle model; on the other hand, Ephraim, Freitag, Komargodski, and Pass (Eurocrypt 2020) construct VDFs in the random oracle model assuming the hardness of repeated squaring. Our result is optimal -- we bridge the current gap between previously known impossibility results and existing constructions.</p>
+                    <p>We initiate the study of <em>proof of work functions</em>, a new cryptographic primitive that shares similarities with both VDFs and proof of works. We show that a stronger form of it does not exist in the random oracle model, leaving open the fascinating possibility of a random-oracle-based construction.</p>
                 </div>
             </div>
+
             
            <div class="paper-item">
                 <div class="paper-title">
@@ -159,111 +132,7 @@ As a consequence of our results, we obtain standard-model post-quantum secure su
 </ul>
                 </div>
             </div>
-
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    Breaking Verifiable Delay Functions in the Random Oracle Model
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract8')">[abstract]</span>
-                    <a href="https://eprint.iacr.org/2024/766" target="_blank" class="eprint-link">[ePrint]</a>
-                    <a href="slides/VDF-uniqueness.pdf" target="_blank" class="slides-link">[slides]</a>
-                    <a href="https://tunyash.github.io/vdf_slides.html" target="_blank" class="slides-link">[slides by Artur]</a>
-                </div>
-                <div class="paper-authors">
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://tunyash.github.io/" target="_blank" class="author-link">Artur Riazanov</a>,
-                    <a href="https://wwwaltzzz.github.io/" target="_blank" class="author-link">Weiqiang Yuan</a>
-                </div>
-                <div class="paper-publisher">Crypto 2025 (45th Annual International Cryptology Conference)</div>
-                <div id="abstract8" class="paper-abstract">
-                    <p>This work resolves the open problem of whether verifiable delay functions (VDFs) can be constructed in the random oracle model.
-A VDF is a cryptographic primitive that requires a long time to compute (even with parallelization), but produces a unique output that is efficiently and publicly verifiable.  </p>
-                    <p>We prove that VDFs do not exist in the random oracle model. This also rules out black-box constructions of VDFs from other cryptographic primitives, such as one-way functions, one-way permutations and collision-resistant hash functions.</p>
-                    <p>Prior to our work, Mahmoody, Smith and Wu (ICALP 2020) prove that <em>perfectly unique</em> VDFs (a much stronger form of VDFs) do not exist in the random oracle model; on the other hand, Ephraim, Freitag, Komargodski, and Pass (Eurocrypt 2020) construct VDFs in the random oracle model assuming the hardness of repeated squaring. Our result is optimal -- we bridge the current gap between previously known impossibility results and existing constructions.</p>
-                    <p>We initiate the study of <em>proof of work functions</em>, a new cryptographic primitive that shares similarities with both VDFs and proof of works. We show that a stronger form of it does not exist in the random oracle model, leaving open the fascinating possibility of a random-oracle-based construction.</p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    Relativized Succinct Arguments in the ROM Do Not Exist
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract7')">[abstract]</span>
-                    <a href="https://eprint.iacr.org/2024/728" target="_blank" class="eprint-link">[ePrint]</a>
-                    <a href="slides/relativized-snargs.pdf" target="_blank" class="slides-link">[slides]</a>
-                </div>
-                <div class="paper-authors">
-                    <a>Annalisa Barbara</a>,
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>
-                </div>
-                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
-                <div id="abstract7" class="paper-abstract">
-                    <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the ROM that can prove/verify the correctness of computations that involve queries to the random oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility holds even if the succinct argument is interactive, and even if soundness is computational (rather than statistical).</p>
-                    <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments require non-relativizing techniques. Moreover, our results stand in sharp contrast with other oracle models, for which a recent line of work has constructed relativized succinct non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that, e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this approach for IVC and PCD in the ROM.</p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    Quantum and Classical Communication Complexity of Permutation-Invariant Functions
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract6')">[abstract]</span>
-                    <a href="https://arxiv.org/abs/2401.00454" target="_blank" class="eprint-link">[arXiv]</a>
-                </div>
-                <div class="paper-authors">
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a>Yunqi Huang</a>,
-                    <a href="http://penghuiyao.info/" target="_blank" class="author-link">Penghui Yao</a>,
-                    <a>Zekun Ye</a>
-                </div>
-                <div class="paper-publisher">STACS 2024 (41st International Symposium on Theoretical Aspects of Computer Science)</div>
-                <div class="paper-publisher">IEEE Transactions on Information Theory</div>
-                <div id="abstract6" class="paper-abstract">
-                    <p>This paper gives a nearly tight characterization of the quantum communication complexity of the permutation-invariant Boolean functions. With such a characterization, we show that the quantum and randomized communication complexity of the permutation-invariant Boolean functions are quadratically equivalent (up to a logarithmic factor). Our results extend a recent line of research regarding query complexity to communication complexity, showing symmetry prevents exponential quantum speedups.</p>
-                    <p>Furthermore, we show the Log-rank Conjecture holds for any non-trivial total permutation-invariant Boolean function. Moreover, we establish a relationship between the quantum/classical communication complexity and the approximate rank of permutation-invariant Boolean functions. This implies the correctness of the Log-approximate-rank Conjecture for permutation-invariant Boolean functions in both randomized and quantum settings (up to a logarithmic factor).</p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    On the Security of Succinct Interactive Arguments from Vector Commitments
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract5')">[abstract]</span>
-                    <a href="https://eprint.iacr.org/2023/1737" target="_blank" class="eprint-link">[ePrint]</a>
-                      <a href="slides/kilian-pcp-iop.pdf" target="_blank" class="slides-link">[slides]</a>
-                </div>
-                <div class="paper-authors">
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
-                </div>
-                <div id="abstract5" class="paper-abstract">
-                    <p>We study the security of a fundamental family of succinct interactive arguments in the standard model, stemming from the works of Kilian (1992) and Ben-Sasson, Chiesa, and Spooner (``BCS'', 2016). These constructions achieve succinctness by combining probabilistic proofs and vector commitments.</p>
-                    <p>Our first result concerns the succinct interactive argument of Kilian, realized with any probabilistically-checkable proof (PCP) and any vector commitment. We establish the tightest known bounds on the security of this protocol. Prior analyses incur large overheads, or assume restrictive properties of the underlying PCP.</p>
-                    <p>Our second result concerns an interactive variant of the BCS succinct non-interactive argument, which here we call IBCS, realized with any public-coin interactive oracle proof (IOP) and any vector commitment. We establish the first security bounds for the IBCS protocol. Prior works rely upon this protocol without proving its security; our result closes this gap.</p>
-                    <p>Finally, we study the capabilities and limitations of succinct arguments based on vector commitments. We show that a generalization of the IBCS protocol, which we call the <em>Finale protocol</em>, is secure when realized with any </em>public-query</em> IOP (a notion that we introduce) that satisfies a natural ``random continuation sampling'' (RCS) property. We also show a partial converse: if the Finale protocol satisfies the RCS property (which in particular implies its security), then so does the underlying public-query IOP.</p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    On Parallel Repetition of PCPs
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract4')">[abstract]</span>
-                    <a href="https://eprint.iacr.org/2023/1714" target="_blank" class="eprint-link">[ePrint]</a>
-                   <a href="slides/pr-pcp.pdf" target="_blank" class="slides-link">[slides]</a>
-                </div>
-                <div class="paper-authors">
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://burcu-yildiz.github.io/" target="_blank" class="author-link">Burcu Yıldız</a>
-                </div>
-                <div class="paper-publisher">ITCS 2024 (15th Innovations in Theoretical Computer Science)</div>
-                <div id="abstract4" class="paper-abstract">
-                    <p>Parallel repetition refers to a set of valuable techniques used to reduce soundness error of probabilistic proofs while saving on certain efficiency measures. Parallel repetition has been studied for interactive proofs (IPs) and multi-prover interactive proofs (MIPs). In this paper, we initiate the study of parallel repetition for probabilistically checkable proofs (PCPs).</p>
-                    <p>We show that, perhaps surprisingly, parallel repetition of a PCP can increase soundness error, in fact bringing the soundness error to one as the number of repetitions tends to infinity. This "failure" of parallel repetition is common: we find that it occurs for a wide class of natural PCPs for NP-complete languages. We explain this unexpected phenomenon by providing a characterization result: the parallel repetition of a PCP brings the soundness error to zero if and only if a certain "MIP projection" of the PCP has soundness error strictly less than one. We show that our characterization is tight via a suitable example. Moreover, for those cases where parallel repetition of a PCP does bring the soundness error to zero, the aforementioned connection to MIPs offers preliminary results on the rate of decay of the soundness error.</p>
-                    <p>Finally, we propose a simple variant of parallel repetition, called consistent parallel repetition (CPR), which has the same randomness complexity and query complexity as the plain variant of parallel repetition. We show that CPR brings the soundness error to zero for every PCP (with non-trivial soundness error). In fact, we show that CPR decreases the soundness error at an exponential rate in the repetition parameter.</p>
-                </div>
-            </div>
-
+            
             <div class="paper-item">
                 <div class="paper-title">
                     Security Bounds for Proof-Carrying Data from Straightline Extractors
@@ -288,6 +157,47 @@ A VDF is a cryptographic primitive that requires a long time to compute (even wi
                 </div>
             </div>
 
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Quantum and Classical Communication Complexity of Permutation-Invariant Functions
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract6')">[abstract]</span>
+                    <a href="https://arxiv.org/abs/2401.00454" target="_blank" class="eprint-link">[arXiv]</a>
+                </div>
+                <div class="paper-authors">
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a>Yunqi Huang</a>,
+                    <a href="http://penghuiyao.info/" target="_blank" class="author-link">Penghui Yao</a>,
+                    <a>Zekun Ye</a>
+                </div>
+                <div class="paper-publisher">STACS 2024 (41st International Symposium on Theoretical Aspects of Computer Science)</div>
+                <div class="paper-publisher">IEEE Transactions on Information Theory</div>
+                <div id="abstract6" class="paper-abstract">
+                    <p>This paper gives a nearly tight characterization of the quantum communication complexity of the permutation-invariant Boolean functions. With such a characterization, we show that the quantum and randomized communication complexity of the permutation-invariant Boolean functions are quadratically equivalent (up to a logarithmic factor). Our results extend a recent line of research regarding query complexity to communication complexity, showing symmetry prevents exponential quantum speedups.</p>
+                    <p>Furthermore, we show the Log-rank Conjecture holds for any non-trivial total permutation-invariant Boolean function. Moreover, we establish a relationship between the quantum/classical communication complexity and the approximate rank of permutation-invariant Boolean functions. This implies the correctness of the Log-approximate-rank Conjecture for permutation-invariant Boolean functions in both randomized and quantum settings (up to a logarithmic factor).</p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    On Parallel Repetition of PCPs
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract4')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2023/1714" target="_blank" class="eprint-link">[ePrint]</a>
+                   <a href="slides/pr-pcp.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://burcu-yildiz.github.io/" target="_blank" class="author-link">Burcu Yıldız</a>
+                </div>
+                <div class="paper-publisher">ITCS 2024 (15th Innovations in Theoretical Computer Science)</div>
+                <div id="abstract4" class="paper-abstract">
+                    <p>Parallel repetition refers to a set of valuable techniques used to reduce soundness error of probabilistic proofs while saving on certain efficiency measures. Parallel repetition has been studied for interactive proofs (IPs) and multi-prover interactive proofs (MIPs). In this paper, we initiate the study of parallel repetition for probabilistically checkable proofs (PCPs).</p>
+                    <p>We show that, perhaps surprisingly, parallel repetition of a PCP can increase soundness error, in fact bringing the soundness error to one as the number of repetitions tends to infinity. This "failure" of parallel repetition is common: we find that it occurs for a wide class of natural PCPs for NP-complete languages. We explain this unexpected phenomenon by providing a characterization result: the parallel repetition of a PCP brings the soundness error to zero if and only if a certain "MIP projection" of the PCP has soundness error strictly less than one. We show that our characterization is tight via a suitable example. Moreover, for those cases where parallel repetition of a PCP does bring the soundness error to zero, the aforementioned connection to MIPs offers preliminary results on the rate of decay of the soundness error.</p>
+                    <p>Finally, we propose a simple variant of parallel repetition, called consistent parallel repetition (CPR), which has the same randomness complexity and query complexity as the plain variant of parallel repetition. We show that CPR brings the soundness error to zero for every PCP (with non-trivial soundness error). In fact, we show that CPR decreases the soundness error at an exponential rate in the repetition parameter.</p>
+                </div>
+            </div>
+            
             <div class="paper-item">
                 <div class="paper-title">
                     Depth-3 Circuits for Inner-Product
@@ -313,6 +223,102 @@ A VDF is a cryptographic primitive that requires a long time to compute (even wi
 
                 </div>
             </div>
+
+            
+           <div class="paper-item">
+                <div class="paper-title">
+                    On the Fiat&#8211Shamir Security of Succinct Arguments from Functional Commitments
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract12')">[abstract]</span>
+                 <a href="https://eprint.iacr.org/2025/902" target="_blank" class="eprint-link">[ePrint]</a>
+                 <a href="https://www.youtube.com/live/pAm225U1s9c" target="_blank" rel="noopener noreferrer" class="eprint-link">[talk by Christian]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://cknabs.github.io/" target="_blank" class="author-link">Christian Knabenhans</a>,
+                    <a>Zihan Yu</a>
+                </div>
+                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
+                <div id="abstract12" class="paper-abstract">
+<p>We study the security of a popular paradigm for constructing SNARGs, closing a key security gap left open by prior work. The paradigm consists of two steps: first, construct a public-coin succinct interactive argument by combining a functional interactive oracle proof (FIOP) and a functional commitment scheme (FC scheme); second, apply the Fiat&#8211Shamir transformation in the random oracle model. Prior work did not consider this generalized setting nor prove the security of this second step (even in special cases).</p>
+
+<p>We prove that the succinct argument obtained in the first step satisfies state-restoration security, thereby ensuring that the second step does in fact yield a succinct non-interactive argument. This is provided the FIOP satisfies state-restoration security and the FC scheme satisfies a natural state-restoration variant of function binding (a generalization of position binding for vector commitment schemes).</p>
+
+<p>Moreover, we prove that notable FC schemes satisfy state-restoration function binding, allowing us to establish, via our main result, the security of several SNARGs of interest (in the random oracle model). This includes a security proof of Plonk, in the ROM, based on ARSDH (a falsifiable assumption).
+</p>
+                </div>
+            </div>
+            
+            
+           <div class="paper-item">
+                <div class="paper-title">
+                    Quantum Rewinding for IOP-Based Succinct Arguments
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract10')">[abstract]</span>
+                 <a href="https://eprint.iacr.org/2025/947" target="_blank" class="eprint-link">[ePrint]</a>
+                  <a href="slides/postquantum-ibcs.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <a>Zijing Di</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                </div>
+                <div id="abstract10" class="paper-abstract">
+<p>We analyze the post-quantum security of succinct interactive arguments constructed from interactive oracle proofs (IOPs) and vector commitment schemes. We prove that an interactive variant of the <em>BCS transformation</em> is secure in the standard model against quantum adversaries when the vector commitment scheme is collapsing.
+</p>
+
+<p>Our proof builds on and extends prior work on the post-quantum security of Kilian's succinct interactive argument, which is instead based on probabilistically checkable proofs (PCPs). We introduce a new quantum rewinding strategy that works across any number of rounds.
+</p>
+
+<p>
+As a consequence of our results, we obtain standard-model post-quantum secure succinct arguments with the best asymptotic complexity known.
+</p>
+                </div>
+            </div>
+            
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Relativized Succinct Arguments in the ROM Do Not Exist
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract7')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2024/728" target="_blank" class="eprint-link">[ePrint]</a>
+                    <a href="slides/relativized-snargs.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a>Annalisa Barbara</a>,
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>
+                </div>
+                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
+                <div id="abstract7" class="paper-abstract">
+                    <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the ROM that can prove/verify the correctness of computations that involve queries to the random oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility holds even if the succinct argument is interactive, and even if soundness is computational (rather than statistical).</p>
+                    <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments require non-relativizing techniques. Moreover, our results stand in sharp contrast with other oracle models, for which a recent line of work has constructed relativized succinct non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that, e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this approach for IVC and PCD in the ROM.</p>
+                </div>
+            </div>
+
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    On the Security of Succinct Interactive Arguments from Vector Commitments
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract5')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2023/1737" target="_blank" class="eprint-link">[ePrint]</a>
+                      <a href="slides/kilian-pcp-iop.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                </div>
+                <div id="abstract5" class="paper-abstract">
+                    <p>We study the security of a fundamental family of succinct interactive arguments in the standard model, stemming from the works of Kilian (1992) and Ben-Sasson, Chiesa, and Spooner (``BCS'', 2016). These constructions achieve succinctness by combining probabilistic proofs and vector commitments.</p>
+                    <p>Our first result concerns the succinct interactive argument of Kilian, realized with any probabilistically-checkable proof (PCP) and any vector commitment. We establish the tightest known bounds on the security of this protocol. Prior analyses incur large overheads, or assume restrictive properties of the underlying PCP.</p>
+                    <p>Our second result concerns an interactive variant of the BCS succinct non-interactive argument, which here we call IBCS, realized with any public-coin interactive oracle proof (IOP) and any vector commitment. We establish the first security bounds for the IBCS protocol. Prior works rely upon this protocol without proving its security; our result closes this gap.</p>
+                    <p>Finally, we study the capabilities and limitations of succinct arguments based on vector commitments. We show that a generalization of the IBCS protocol, which we call the <em>Finale protocol</em>, is secure when realized with any </em>public-query</em> IOP (a notion that we introduce) that satisfies a natural ``random continuation sampling'' (RCS) property. We also show a partial converse: if the Finale protocol satisfies the RCS property (which in particular implies its security), then so does the underlying public-query IOP.</p>
+                </div>
+            </div>
+
 
             <div class="paper-item">
                 <div class="paper-title">
