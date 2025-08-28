@@ -52,6 +52,57 @@
     <main>
         <section id="papers">
             <h2>Papers</h2>
+            
+                       <div class="paper-item">
+                <div class="paper-title">
+                    Quantum Rewinding for IOP-Based Succinct Arguments
+                 <span class="abstract-toggle" onclick="toggleAbstract('abstract10')">[abstract]</span>
+                 <a href="https://eprint.iacr.org/2025/947" target="_blank" class="eprint-link">[ePrint]</a>
+                  <a href="slides/postquantum-ibcs.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
+                    <a>Zijing Di</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>,
+                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
+                </div>
+                <div class="paper-publisher">TCC 2025 (23rd Theory of Cryptography Conference)</div>
+                <div id="abstract10" class="paper-abstract">
+<p>We analyze the post-quantum security of succinct interactive arguments constructed from interactive oracle proofs (IOPs) and vector commitment schemes. We prove that an interactive variant of the <em>BCS transformation</em> is secure in the standard model against quantum adversaries when the vector commitment scheme is collapsing.
+</p>
+
+<p>Our proof builds on and extends prior work on the post-quantum security of Kilian's succinct interactive argument, which is instead based on probabilistically checkable proofs (PCPs). We introduce a new quantum rewinding strategy that works across any number of rounds.
+</p>
+
+<p>
+As a consequence of our results, we obtain standard-model post-quantum secure succinct arguments with the best asymptotic complexity known.
+</p>
+                </div>
+            </div>
+            
+
+            <div class="paper-item">
+                <div class="paper-title">
+                    Relativized Succinct Arguments in the ROM Do Not Exist
+                    <span class="abstract-toggle" onclick="toggleAbstract('abstract7')">[abstract]</span>
+                    <a href="https://eprint.iacr.org/2024/728" target="_blank" class="eprint-link">[ePrint]</a>
+                    <a href="slides/relativized-snargs.pdf" target="_blank" class="slides-link">[slides]</a>
+                </div>
+                <div class="paper-authors">
+                    <a>Annalisa Barbara</a>,
+                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
+                    <span class="author-emphasis">Ziyi Guan</span>
+                </div>
+                <div class="paper-publisher">TCC 2025 (23rd Theory of Cryptography Conference)</div>
+                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
+                <div id="abstract7" class="paper-abstract">
+                    <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the ROM that can prove/verify the correctness of computations that involve queries to the random oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility holds even if the succinct argument is interactive, and even if soundness is computational (rather than statistical).</p>
+                    <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments require non-relativizing techniques. Moreover, our results stand in sharp contrast with other oracle models, for which a recent line of work has constructed relativized succinct non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that, e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this approach for IVC and PCD in the ROM.</p>
+                </div>
+            </div>
+
+            
             <div class="paper-item">
                 <div class="paper-title">
                     Breaking Verifiable Delay Functions in the Random Oracle Model
@@ -247,54 +298,7 @@ Aaronson (STOC 2010) conjectured that almost k-wise independence fools constant-
                 </div>
             </div>
             
-            
-           <div class="paper-item">
-                <div class="paper-title">
-                    Quantum Rewinding for IOP-Based Succinct Arguments
-                 <span class="abstract-toggle" onclick="toggleAbstract('abstract10')">[abstract]</span>
-                 <a href="https://eprint.iacr.org/2025/947" target="_blank" class="eprint-link">[ePrint]</a>
-                  <a href="slides/postquantum-ibcs.pdf" target="_blank" class="slides-link">[slides]</a>
-                </div>
-                <div class="paper-authors">
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <a href="https://marceldallagnol.github.io/" target="_blank" class="author-link">Marcel Dall'Agnol</a>,
-                    <a>Zijing Di</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>,
-                    <a href="https://spooner.cc/" target="_blank" class="author-link">Nicholas Spooner</a>
-                </div>
-                <div id="abstract10" class="paper-abstract">
-<p>We analyze the post-quantum security of succinct interactive arguments constructed from interactive oracle proofs (IOPs) and vector commitment schemes. We prove that an interactive variant of the <em>BCS transformation</em> is secure in the standard model against quantum adversaries when the vector commitment scheme is collapsing.
-</p>
-
-<p>Our proof builds on and extends prior work on the post-quantum security of Kilian's succinct interactive argument, which is instead based on probabilistically checkable proofs (PCPs). We introduce a new quantum rewinding strategy that works across any number of rounds.
-</p>
-
-<p>
-As a consequence of our results, we obtain standard-model post-quantum secure succinct arguments with the best asymptotic complexity known.
-</p>
-                </div>
-            </div>
-            
-
-            <div class="paper-item">
-                <div class="paper-title">
-                    Relativized Succinct Arguments in the ROM Do Not Exist
-                    <span class="abstract-toggle" onclick="toggleAbstract('abstract7')">[abstract]</span>
-                    <a href="https://eprint.iacr.org/2024/728" target="_blank" class="eprint-link">[ePrint]</a>
-                    <a href="slides/relativized-snargs.pdf" target="_blank" class="slides-link">[slides]</a>
-                </div>
-                <div class="paper-authors">
-                    <a>Annalisa Barbara</a>,
-                    <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" class="author-link">Alessandro Chiesa</a>,
-                    <span class="author-emphasis">Ziyi Guan</span>
-                </div>
-                <div class="paper-publisher">ZKProof 7, Sofia, Bulgaria</div>
-                <div id="abstract7" class="paper-abstract">
-                    <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the ROM that can prove/verify the correctness of computations that involve queries to the random oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility holds even if the succinct argument is interactive, and even if soundness is computational (rather than statistical).</p>
-                    <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments require non-relativizing techniques. Moreover, our results stand in sharp contrast with other oracle models, for which a recent line of work has constructed relativized succinct non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that, e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this approach for IVC and PCD in the ROM.</p>
-                </div>
-            </div>
-
+           
 
             <div class="paper-item">
                 <div class="paper-title">
