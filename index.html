@@ -83,6 +83,7 @@
     .nav-home:hover{ background:rgba(0,0,0,.04); text-decoration:none; }
 
     .nav-toggle{
+      display:flex;
       display:none;
       width:40px;
       height:38px;
@@ -95,6 +96,10 @@
       gap:4px;
       cursor:pointer;
       flex:0 0 auto;
+    
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
     }
     .nav-toggle:hover{ background:rgba(0,0,0,.03); }
     .nav-toggle .bar{
@@ -140,10 +145,10 @@
     }
 
     .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:48px 20px 80px;
-    }
+  max-width:var(--max);
+  margin:0 auto;
+  padding:calc(var(--navH, 72px) + 24px) 20px 80px;
+}
 
     /* Bio */
     .bio{
@@ -397,7 +402,8 @@
     
     @media (max-width:720px){
       nav{ padding:10px 14px; }
-      .nav-toggle{ display:inline-flex; }
+      .nav-toggle{
+      display:flex; display:inline-flex; }
       .navlinks{
         display:none;
         position:absolute;
@@ -424,7 +430,9 @@
     }
 
     @media (max-width:720px){
-      .wrap{ padding:28px 16px 60px; }
+      .wrap{
+    padding:104px 16px 60px;
+  }
       .bio{ grid-template-columns:1fr; gap:16px; align-items:start; }
       .avatar{ width:min(220px,60vw); height:auto; }
       .avatar img{ height:auto; object-fit:contain; }
@@ -447,7 +455,7 @@
   <nav aria-label="Section navigation">
     <div class="nav-inner">
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <button id="hamburger" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Toggle navigation</span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -470,7 +478,7 @@
     <section id="bio" aria-label="Bio">
       <div class="bio">
         <div class="avatar">
-          <img src="ziyiguan.jpg">
+          <img src="ziyiguan.jpg" alt="Ziyi Guan" onerror="this.style.display='none'; var a=this.closest('.avatar'); if(a){a.style.display='none';}">
           <div class="credit">
             Photo credit Ronen Goldman
           </div>
@@ -1329,20 +1337,28 @@
     (function(){
       const nav = document.querySelector('nav[aria-label="Section navigation"]');
       if(!nav) return;
-      const btn = nav.querySelector('.nav-toggle');
+      const hamburger = document.getElementById('hamburger') || nav.querySelector('.nav-toggle');
       const menu = nav.querySelector('#nav-menu');
-      if(!btn || !menu) return;
+      if(!hamburger || !menu) return;
+
+
+      function setNavHeight(){
+        const h = nav.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--navH', h + 'px');
+      }
+      setNavHeight();
+      window.addEventListener('resize', setNavHeight);
 
       function closeMenu(){
         nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
+        hamburger.setAttribute('aria-expanded','false');
       }
       function toggleMenu(){
         const isOpen = nav.classList.toggle('open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
 
-      btn.addEventListener('click', toggleMenu);
+      hamburger.addEventListener('click', toggleMenu);
 
       // Close when clicking a link (mobile)
       menu.addEventListener('click', (e) => {
