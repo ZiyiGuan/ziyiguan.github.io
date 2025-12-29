@@ -147,7 +147,7 @@
     .wrap{
   max-width:var(--max);
   margin:0 auto;
-  padding:calc(var(--navH, 72px) + 24px) 20px 80px;
+  padding:calc(var(--navH, 72px)) 20px 80px;
 }
 
     /* Bio */
@@ -431,7 +431,7 @@
 
     @media (max-width:720px){
       .wrap{
-    padding:104px 16px 60px;
+    padding:50px 16px 60px;
   }
       .bio{ grid-template-columns:1fr; gap:16px; align-items:start; }
       .avatar{ width:min(220px,60vw); height:auto; }
@@ -521,6 +521,52 @@
 
       <div class="flatlist">
 
+
+        <!-- 14 -->
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
+              <div class="num">14.</div>
+              <div>
+                <div class="title">SNARGs for NP from LWE</div>
+                <div class="meta">
+                  <span class="author-emphasis">Ziyi Guan</span>, <a href="https://www.eylonyogev.com/" target="_blank" rel="noreferrer">Eylon Yogev</a><br>
+                  <a href="https://eprint.iacr.org/2025/2328" target="_blank" rel="noreferrer">ePrint</a>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <button type="button" class="toggle" data-target="abs14">Abstract</button>
+            </div>
+          </div>
+          <div id="abs14" class="abstract">
+              <p>
+                We construct the first succinct non-interactive argument (SNARG) for $\mathsf{NP}$ in the common reference
+                string model based on the sub-exponential hardness of the learning with errors (LWE) assumption.
+                As a result, our construction is plausibly post-quantum secure. Previous constructions of SNARGs
+                from falsifiable assumptions either relied on indistinguishability obfuscation or were restricted
+                to idealized models (e.g., the random oracle model or generic group model).
+              </p>
+              <p>
+                Our construction is also the first to instantiate the Micali transformation (Fiat--Shamir applied
+                to Kilian's protocol) in the standard model with concrete hash functions. We achieve this by
+                developing a new mechanism to securely instantiate the Fiat--Shamir hash function for interactive
+                arguments, overcoming the known barriers that limit standard techniques to interactive proofs. Our
+                construction relies on two primitives of independent interest: a PCP with a new property we term
+                &ldquo;shadow soundness&rdquo;, and a lattice-based vector commitment that provides statistical binding with
+                respect to a hidden function.
+              </p>
+              <p>
+                While our scheme has non-adaptive security and achieves only partial succinctness with argument size
+                $O(n^{0.91})$, it serves as a foundational proof of concept that SNARGs can be based solely on
+                standard lattice assumptions. Furthermore, our result refutes &ldquo;universal&rdquo; attacks on the Micali
+                framework by demonstrating that there exist concrete instantiations of the underlying components
+                for which the transformation is sound.
+              </p>
+            </div>
+        </div>
+        
+        
         <!-- 13 -->
         <div class="flatitem">
           <div class="row">
