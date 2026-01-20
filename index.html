@@ -528,10 +528,9 @@
             <div class="left">
               <div class="num">14.</div>
               <div>
-                <div class="title">SNARGs for NP from LWE</div>
+                <div class="title">SNARGs for NP via Fiat&ndash;Shamir in the Plain Model</div>
                 <div class="meta">
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://www.eylonyogev.com/" target="_blank" rel="noreferrer">Eylon Yogev</a><br>
-                  Note: we have identified a bug in the proof, and we currently do not know how to fix it. <br>
                   <a href="https://eprint.iacr.org/2025/2328" target="_blank" rel="noreferrer">ePrint</a>
                 </div>
               </div>
@@ -541,31 +540,35 @@
             </div>
           </div>
           <div id="abs14" class="abstract">
-                <p>
-                  We construct the first succinct non-interactive argument (SNARG) for
-                  <span class="math">$\mathsf{NP}$</span> in the common reference string model based solely on the
-                  sub-exponential hardness of the learning with errors (LWE) assumption. Our scheme
-                  achieves non-adaptive security, partial succinctness with an argument size of
-                  <span class="math">$O(n^{0.91})$</span>, and is plausibly post-quantum secure. Previous
-                  constructions of SNARGs from falsifiable assumptions either relied on
-                  indistinguishability obfuscation or were restricted to idealized models (e.g., the
-                  random oracle model or generic group model).
-                </p>
-                <p>
-                  Our construction is also the first to instantiate the Micali transformation
-                  (Fiat&ndash;Shamir applied to Kilian's protocol) in the standard model with concrete hash
-                  functions. We achieve this by developing a new mechanism to securely instantiate
-                  the Fiat&ndash;Shamir hash function for interactive arguments, overcoming the known
-                  barriers that limit standard techniques to interactive proofs. As a result, our
-                  scheme refutes &ldquo;universal&rdquo; attacks on the Micali framework by demonstrating that
-                  there exist concrete instantiations of the underlying components for which the
-                  transformation is sound.
-                </p>
-                <p>
-                  Our construction relies on two primitives of independent interest: a PCP with a new
-                  property which we term &ldquo;shadow soundness&rdquo;, and a lattice-based vector commitment
-                  that provides statistical binding with respect to a hidden function.
-                </p>
+                  <p>
+                    We consider constructions of succinct non-interactive arguments (SNARGs) for
+                    $\mathsf{NP}$ in the standard model. Specifically, we revisit the seminal
+                    Micali transformation (applying Fiat&ndash;Shamir to Kilian's protocol), which
+                    has traditionally only been analyzed in the random oracle model.
+                  </p>
+                
+                  <p>
+                    We show that the Micali framework can be successfully instantiated in the
+                    standard model by leveraging a new interaction between two primitives: a PCP
+                    satisfying a property we term <em>shadow soundness</em>, and a vector
+                    commitment scheme satisfying <em>function statistical binding</em>.
+                  </p>
+                
+                  <p>
+                    We prove a general theorem stating that any language admitting a suitable
+                    shadow PCP combined with a compatible vector commitment yields a secure
+                    SNARG. We instantiate this paradigm using sub-exponential indistinguishability
+                    obfuscation (iO) and sub-exponential learning with error (LWE) to obtain a
+                    SNARG for all of $\mathsf{NP}$.
+                  </p>
+                
+                  <p>
+                    Our result serves as the first concrete validation of the Micali blueprint,
+                    and in particular of the Fiat&ndash;Shamir transformation, in the standard
+                    model. As a corollary, we refute &ldquo;universal&rdquo; attacks on the Micali
+                    framework by demonstrating that there exist concrete instantiations of the
+                    underlying components for which the transformation is sound.
+                  </p>
             </div>
         </div>
         
