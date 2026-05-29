@@ -30,7 +30,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ziyi Guan</title>
   <meta name="description"
-    content="Personal academic homepage of Ziyi Guan — PhD student at EPFL working on complexity theory, probabilistic proofs, cryptography, and quantum computing." />
+    content="Personal academic homepage of Ziyi Guan — postdoctoral researcher at MIT and NYU working on complexity theory, probabilistic proofs, cryptography, and quantum computing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
@@ -206,29 +206,45 @@
     }
 
     /* Bio */
-    .bio {
-      display: grid;
-      grid-template-columns: 1fr 155px;
-      gap: 40px;
+    .bio-top {
+      display: flex;
       align-items: flex-start;
+      gap: 36px;
+      margin-bottom: 22px;
     }
 
-    .bio-text {
-      order: 1;
+    .bio-top-text {
+      flex: 1;
+      min-width: 0;
     }
 
-    .avatar {
-      order: 2;
-      width: 155px;
+    .identity-links {
+      margin-top: 6px;
+      font-size: 13.5px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
     }
 
-    .avatar img {
+    .identity-links a {
+      color: var(--text);
+    }
+
+    .identity-links .dot {
+      color: var(--muted-light);
+    }
+
+    .bio-photo {
+      flex: 0 0 150px;
+    }
+
+    .bio-photo img {
       width: 100%;
       height: auto;
-      object-fit: cover;
       display: block;
       border-radius: var(--radius);
-      background: #eee;
       box-shadow: 0 4px 18px rgba(0, 0, 0, .10), 0 1px 3px rgba(0, 0, 0, .06);
     }
 
@@ -242,35 +258,8 @@
       font-size: 32px;
       font-weight: 600;
       letter-spacing: -0.025em;
-      margin: 0 0 8px;
+      margin: 0;
       line-height: 1.15;
-    }
-
-    .identity-links {
-      margin-top: 4px;
-      margin-bottom: 18px;
-      font-size: 13.5px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .identity-links a {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color .15s;
-    }
-
-    .identity-links a:hover {
-      text-decoration: none;
-      border-bottom-color: rgba(0, 0, 0, .45);
-    }
-
-    .identity-links .dot {
-      color: var(--muted-light);
     }
 
     .bio-paragraphs p {
@@ -782,24 +771,12 @@
         padding: calc(var(--navH, 60px) + 20px) 16px 70px;
       }
 
-      .bio {
-        grid-template-columns: 1fr;
+      .bio-top {
         gap: 20px;
-        align-items: start;
       }
 
-      .bio-text {
-        order: 1;
-      }
-
-      .avatar {
-        order: 2;
-        width: min(160px, 45vw);
-      }
-
-      .avatar img {
-        height: auto;
-        object-fit: contain;
+      .bio-photo {
+        flex-basis: 120px;
       }
 
       h1 {
@@ -820,6 +797,18 @@
       .teach-row {
         grid-template-columns: 9ch 1fr;
         column-gap: 12px;
+      }
+    }
+
+    @media (max-width:480px) {
+      .bio-top {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .bio-photo {
+        flex-basis: auto;
+        width: min(150px, 42vw);
       }
     }
 
@@ -878,44 +867,49 @@
 
     <!-- BIO -->
     <section id="bio" aria-label="Bio">
-      <div class="bio">
-        <div class="avatar">
+      <div class="bio-top">
+        <div class="bio-photo">
           <img src="ziyiguan.jpg" alt="Ziyi Guan"
-            onerror="this.style.display='none'; var a=this.closest('.avatar'); if(a){a.style.display='none';}">
+            onerror="this.style.display='none'">
         </div>
-
-        <div class="bio-text">
+        <div class="bio-top-text">
           <h1>Ziyi Guan</h1>
-
           <div class="identity-links">
             <a href="mailto:ziyi.guan@epfl.ch">ziyi.guan@epfl.ch</a>
             <span class="dot">·</span>
-            <a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank"
-              rel="noreferrer">Google Scholar</a>
+            <a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
             <span class="dot">·</span>
             <a href="ZiyiGuan-CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
+        </div>
+      </div>
 
           <div class="bio-paragraphs">
             <p>
-              I am a fifth-year Ph.D. student at the
-              <a href="https://theory.epfl.ch/" target="_blank" rel="noopener noreferrer">EPFL theory group</a>,
-              where I am advised by
-              <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro
-                Chiesa</a>
+              Starting in July 2026, I will be a Swiss NSF Postdoc.Mobility fellow and postdoctoral researcher at MIT and NYU. I will be hosted by
+              <a href="https://scholar.google.com/citations?user=cPDxYXMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Yael Kalai</a>
               and
-              <a href="https://theory.epfl.ch/mika/" target="_blank" rel="noopener noreferrer">Mika G&#246;&#246;s</a>.
-              I received a B.S. in Computer Science and a B.S. in Mathematical Sciences from Carnegie Mellon University
-              in 2020.
+              <a href="https://people.csail.mit.edu/vinodv/" target="_blank" rel="noopener noreferrer">Vinod Vaikuntanathan</a>
+              at MIT, and by
+              <a href="https://sites.google.com/view/nirbitansky" target="_blank" rel="noopener noreferrer">Nir Bitansky</a>
+              and
+              <a href="https://cs.nyu.edu/~bb/" target="_blank" rel="noopener noreferrer">Benedikt B&#252;nz</a>
+              at NYU.
             </p>
 
             <p>
-              I am interested in theoretical computer science, particularly complexity theory,
-              probabilistic proof systems, cryptography, and quantum computing.
+              I received my Ph.D. from EPFL in 2026, where I was advised by
+              <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noopener noreferrer">Alessandro Chiesa</a>
+              and
+              <a href="https://theory.epfl.ch/mika/" target="_blank" rel="noopener noreferrer">Mika G&#246;&#246;s</a>.
+              I received a B.S. in Computer Science and a B.S. in Mathematical Sciences from Carnegie Mellon University in 2020.
+            </p>
+
+            <p>
+              I am interested in theoretical computer science, particularly
+              probabilistic proof systems, cryptography, complexity theory and quantum computing.
             </p>
           </div>
-        </div>
-      </div>
     </section>
 
 
@@ -1260,6 +1254,39 @@
     <section id="talks" aria-label="Talks">
       <h2>Talks</h2>
       <div class="flatlist">
+
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
+              <div class="num">11.</div>
+              <div>
+                <div class="titleline">
+                  <div class="title">Succinctness Requires Probabilistic Checking in the Quantum World</div>
+                </div>
+                <div class="meta">
+                  Sorbonne Université · Seminar · June 8, 2026
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
+              <div class="num">10.</div>
+              <div>
+                <div class="titleline">
+                  <div class="title">Time-Space Tradeoffs for Probabilistic Proofs</div>
+                </div>
+                <div class="meta">
+                  Rome · <a href="https://zkproof.org/events/zkproof-8-rome/" target="_blank" rel="noreferrer">ZKProof 8</a> · May 10, 2026
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="flatitem">
           <div class="row">
             <div class="left">
