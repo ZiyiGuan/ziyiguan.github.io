@@ -219,21 +219,35 @@
     }
 
     .identity-links {
-      margin-top: 6px;
-      font-size: 13.5px;
-      color: var(--muted);
+      margin-top: 10px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 6px;
-      align-items: center;
     }
 
     .identity-links a {
+      font-size: 15px;
       color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border-bottom: none;
     }
 
-    .identity-links .dot {
-      color: var(--muted-light);
+    .identity-links a:hover {
+      border-bottom: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(0, 0, 0, .35);
+    }
+
+    .identity-links a::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--muted-light);
+      flex: 0 0 auto;
     }
 
     .bio-photo {
@@ -255,9 +269,9 @@
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 600;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.03em;
       margin: 0;
       line-height: 1.15;
     }
@@ -876,9 +890,7 @@
           <h1>Ziyi Guan</h1>
           <div class="identity-links">
             <a href="mailto:ziyi.guan@epfl.ch">ziyi.guan@epfl.ch</a>
-            <span class="dot">·</span>
             <a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
-            <span class="dot">·</span>
             <a href="ZiyiGuan-CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
         </div>
