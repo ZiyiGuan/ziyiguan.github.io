@@ -31,24 +31,57 @@
   <title>Ziyi Guan</title>
   <meta name="description"
     content="Personal academic homepage of Ziyi Guan — postdoctoral researcher at MIT and NYU working on complexity theory, probabilistic proofs, cryptography, and quantum computing." />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='600' fill='%23ffffff' text-anchor='middle'%3EZG%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ziyi Guan" />
+  <meta property="og:description"
+    content="Postdoctoral researcher at MIT and NYU working on complexity theory, probabilistic proofs, cryptography, and quantum computing." />
+  <meta property="og:url" content="https://ziyiguan.github.io/" />
+  <meta property="og:image" content="https://ziyiguan.github.io/ziyiguan.jpg" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
+      color-scheme: light dark;
       --bg: #ffffff;
       --text: #111111;
+      --text-soft: #1f2937;
       --muted: #6b7280;
       --muted-light: #9ca3af;
       --line: #e5e7eb;
       --line-dark: #d1d5db;
-      --link: #1a4ed8;
-      --link-hover: #1e40af;
-      --accent: #1a4ed8;
       --surface: #f9fafb;
+      --nav-bg: rgba(255, 255, 255, 0.88);
+      --panel-bg: #ffffff;
+      --border-ui: rgba(0, 0, 0, .10);
+      --border-ui-hover: rgba(0, 0, 0, .16);
+      --hover-bg: rgba(0, 0, 0, .04);
+      --hover-underline: rgba(0, 0, 0, .45);
       --max: 920px;
       --radius: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --text: #e7e9ee;
+        --text-soft: #cbd2dc;
+        --muted: #98a1ad;
+        --muted-light: #6b7280;
+        --line: #262b34;
+        --line-dark: #3a414d;
+        --surface: #161a21;
+        --nav-bg: rgba(15, 17, 21, 0.85);
+        --panel-bg: #161a21;
+        --border-ui: rgba(255, 255, 255, .16);
+        --border-ui-hover: rgba(255, 255, 255, .26);
+        --hover-bg: rgba(255, 255, 255, .06);
+        --hover-underline: rgba(255, 255, 255, .5);
+      }
     }
 
     * {
@@ -79,7 +112,7 @@
 
     a:hover {
       text-decoration: none;
-      border-bottom-color: rgba(0, 0, 0, .45);
+      border-bottom-color: var(--hover-underline);
     }
 
     nav {
@@ -88,10 +121,10 @@
       left: 0;
       right: 0;
       z-index: 999999;
-      background: rgba(255, 255, 255, 0.88);
+      background: var(--nav-bg);
       -webkit-backdrop-filter: blur(14px) saturate(180%);
       backdrop-filter: blur(14px) saturate(180%);
-      border-bottom: 1px solid rgba(0, 0, 0, .07);
+      border-bottom: 1px solid var(--line);
       padding: 11px 20px;
     }
 
@@ -110,40 +143,36 @@
       letter-spacing: -0.01em;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, .10);
+      border: 1px solid var(--border-ui);
       text-decoration: none;
       border-bottom: none;
       flex: 0 0 auto;
     }
 
     .nav-home:hover {
-      background: rgba(0, 0, 0, .04);
+      background: var(--hover-bg);
       text-decoration: none;
       border-bottom: none;
     }
 
     .nav-toggle {
-      display: flex;
       display: none;
       width: 40px;
       height: 38px;
       border-radius: 10px;
-      border: 1px solid rgba(0, 0, 0, .12);
-      background: #fff;
+      border: 1px solid var(--border-ui);
+      background: var(--panel-bg);
       padding: 0;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 4px;
       cursor: pointer;
       flex: 0 0 auto;
-
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
     .nav-toggle:hover {
-      background: rgba(0, 0, 0, .03);
+      background: var(--hover-bg);
     }
 
     .nav-toggle .bar {
@@ -185,7 +214,7 @@
       font-weight: 500;
       padding: 6px 13px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, .09);
+      border: 1px solid var(--border-ui);
       white-space: nowrap;
       flex: 0 0 auto;
       border-bottom: none;
@@ -193,8 +222,8 @@
     }
 
     .navlinks a:hover {
-      background: rgba(0, 0, 0, .05);
-      border-color: rgba(0, 0, 0, .14);
+      background: var(--hover-bg);
+      border-color: var(--border-ui-hover);
       text-decoration: none;
       border-bottom: none;
     }
@@ -238,7 +267,7 @@
       border-bottom: none;
       text-decoration: underline;
       text-underline-offset: 2px;
-      text-decoration-color: rgba(0, 0, 0, .35);
+      text-decoration-color: var(--hover-underline);
     }
 
     .identity-links a::before {
@@ -281,7 +310,7 @@
       font-size: 15.5px;
       max-width: 68ch;
       overflow-wrap: anywhere;
-      color: #1f2937;
+      color: var(--text-soft);
     }
 
     .bio-paragraphs p:last-child {
@@ -297,6 +326,7 @@
 
     section {
       padding: 40px 0 8px;
+      scroll-margin-top: calc(var(--navH, 72px) + 12px);
     }
 
     h2 {
@@ -304,7 +334,7 @@
       font-weight: 600;
       margin: 0 0 20px;
       letter-spacing: -0.01em;
-      color: #111;
+      color: var(--text);
       display: flex;
       align-items: center;
       gap: 10px;
@@ -372,7 +402,7 @@
       margin: 0;
       overflow-wrap: anywhere;
       word-break: break-word;
-      color: #0f172a;
+      color: var(--text);
     }
 
     .titleline {
@@ -413,8 +443,8 @@
 
     button {
       appearance: none;
-      border: 1px solid rgba(0, 0, 0, .11);
-      background: #fff;
+      border: 1px solid var(--border-ui);
+      background: var(--panel-bg);
       border-radius: 999px;
       padding: 5px 12px;
       font-size: 12.5px;
@@ -428,20 +458,20 @@
 
     button:hover {
       background: var(--surface);
-      border-color: rgba(0, 0, 0, .18);
+      border-color: var(--border-ui-hover);
       color: var(--text);
     }
 
-    /* Abstract: paper-abstract style */
+    /* Abstracts (papers & talks) */
     .abstract {
       margin-top: 10px;
       padding-top: 10px;
-      border-top: 1px dashed rgba(0, 0, 0, .18);
-      color: #222;
-      font-size: 14px;
-      max-width: 92ch;
+      border-top: 1px dashed var(--line-dark);
+      color: var(--text-soft);
+      font-size: 13.5px;
+      max-width: 88ch;
       overflow-wrap: anywhere;
-      line-height: 1.45;
+      line-height: 1.55;
       display: none;
     }
 
@@ -470,40 +500,25 @@
       margin: 4px 0;
     }
 
-    /* Inline helpers */
-    /* Talk abstracts */
-    .abstract {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px dashed rgba(0, 0, 0, .15);
-      color: #374151;
-      font-size: 13.5px;
-      max-width: 88ch;
-      overflow-wrap: anywhere;
-      line-height: 1.55;
-      display: none;
-    }
-
-    .abstract.show {
-      display: block;
-    }
-
-    .abstract p {
-      margin: 0 0 6px;
-    }
-
-    .abstract p:last-child {
-      margin-bottom: 0;
-    }
-
     .talk-abstract-toggle {
+      appearance: none;
+      border: none;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      font: inherit;
+      font-size: inherit;
       cursor: pointer;
       user-select: none;
       color: var(--muted);
+      border-bottom: 1px solid transparent;
     }
 
     .talk-abstract-toggle:hover {
-      border-bottom: 1px solid rgba(0, 0, 0, .45);
+      background: none;
+      color: var(--muted);
+      border-bottom: 1px solid var(--hover-underline);
     }
 
     .author-emphasis {
@@ -569,7 +584,7 @@
 
     .teach-body a:hover {
       text-decoration: none;
-      border-bottom-color: rgba(0, 0, 0, .45);
+      border-bottom-color: var(--hover-underline);
     }
 
     .teach-sep {
@@ -655,7 +670,7 @@
     .sup-name {
       font-weight: 500;
       font-size: 15px;
-      color: #0f172a;
+      color: var(--text);
     }
 
     .sup-name a {
@@ -666,7 +681,7 @@
 
     .sup-name a:hover {
       text-decoration: none;
-      border-bottom-color: rgba(0, 0, 0, .45);
+      border-bottom-color: var(--hover-underline);
     }
 
     .sup-affil {
@@ -709,7 +724,7 @@
     }
 
     .sup-topic {
-      color: #374151;
+      color: var(--text-soft);
       font-style: italic;
     }
 
@@ -744,7 +759,6 @@
       }
 
       .nav-toggle {
-        display: flex;
         display: inline-flex;
       }
 
@@ -754,8 +768,8 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: #ffffff;
-        border-bottom: 1px solid rgba(0, 0, 0, .08);
+        background: var(--panel-bg);
+        border-bottom: 1px solid var(--line);
         padding: 10px 14px 14px;
         flex-direction: column;
         gap: 10px;
@@ -898,7 +912,7 @@
 
           <div class="bio-paragraphs">
             <p>
-              Starting in July 2026, I will be a Swiss NSF Postdoc.Mobility fellow and postdoctoral researcher at MIT and NYU. I will be hosted by
+              I am a Swiss NSF Postdoc.Mobility fellow and postdoctoral researcher at MIT and NYU. I am hosted by
               <a href="https://scholar.google.com/citations?user=cPDxYXMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Yael Kalai</a>
               and
               <a href="https://people.csail.mit.edu/vinodv/" target="_blank" rel="noopener noreferrer">Vinod Vaikuntanathan</a>
@@ -933,11 +947,11 @@
       <div class="flatlist">
 
 
-        <!-- 14 -->
+        <!-- 15 -->
         <div class="flatitem">
           <div class="row">
             <div class="left">
-              <div class="num">14.</div>
+              <div class="num">15.</div>
               <div>
                 <div class="titleline">
                   <div class="title">SNARGs for NP via Fiat&ndash;Shamir in the Plain Model</div><span
@@ -947,6 +961,27 @@
                 <div class="meta">
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://www.eylonyogev.com/" target="_blank"
                     rel="noreferrer">Eylon Yogev</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
+              <div class="num">14.</div>
+              <div>
+                <div class="titleline">
+                  <div class="title">Succinct Arguments from Lattice-Based Non-Interactive Linear Commitments</div>
+                </div>
+                <div class="meta">
+                  <a href="https://jbootle.github.io/" target="_blank" rel="noreferrer">Jonathan Bootle</a>, <span
+                    class="author-emphasis">Ziyi Guan</span>, <a href="https://cknabs.github.io/" target="_blank"
+                    rel="noreferrer">Christian Knabenhans</a><br>
+                  TCC 2026 (24th Theory of Cryptography Conference)<br>
+                  ZKProof 8, Rome, Italy
                 </div>
               </div>
             </div>
@@ -1276,6 +1311,9 @@
                   <div class="title">Succinctness Requires Probabilistic Checking in the Quantum World</div>
                 </div>
                 <div class="meta">
+                  Columbia University · Seminar · Sep 24, 2026<br>
+                  Stanford University · Seminar · Sep 2,2026<br>
+                  UCSB · Information-Theoretic Cryptography · Aug 15, 2026<br>
                   Sorbonne Université · Seminar · June 8, 2026
                 </div>
               </div>
@@ -1308,7 +1346,8 @@
                   <div class="title">On the Security of Succinct Arguments from Probabilistic Proofs</div>
                   <span class="titlelinks">
                     <a href="slides/kilian-talk.pdf" target="_blank" rel="noreferrer">[slides]</a>
-                    <span class="talk-abstract-toggle" data-target="talkabs9">[abstract]</span>
+                    <button type="button" class="talk-abstract-toggle" data-target="talkabs9"
+                      aria-expanded="false" aria-controls="talkabs9">[abstract]</button>
                   </span>
                 </div>
                 <div class="meta">
@@ -1797,6 +1836,7 @@
       <div class="service-group">
         <div class="service-group-label">External Reviewer</div>
         <div class="service-list">
+          <span class="service-tag">SODA 2027</span>
           <span class="service-tag">Crypto 2026</span>
           <span class="service-tag">Eurocrypt 2026</span>
           <span class="service-tag">STOC 2026</span>
@@ -1822,11 +1862,12 @@
 
   <script>
     // Talk abstract toggles
-    document.querySelectorAll(".talk-abstract-toggle").forEach(link => {
-      link.addEventListener("click", () => {
-        const id = link.getAttribute("data-target");
+    document.querySelectorAll(".talk-abstract-toggle").forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const id = toggle.getAttribute("data-target");
         const el = document.getElementById(id);
-        el.classList.toggle("show");
+        const shown = el.classList.toggle("show");
+        toggle.setAttribute("aria-expanded", shown ? "true" : "false");
       });
     });
 
