@@ -38,7 +38,7 @@
   <meta property="og:description"
     content="Postdoctoral researcher at MIT and NYU working on complexity theory, probabilistic proofs, cryptography, and quantum computing." />
   <meta property="og:url" content="https://ziyiguan.github.io/" />
-  <meta property="og:image" content="https://ziyiguan.github.io/ziyiguan.jpg" />
+  <meta property="og:image" content="https://ziyiguan.github.io/ziyiguan.webp" />
   <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -237,9 +237,8 @@
     /* Bio */
     .bio-top {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       gap: 36px;
-      margin-bottom: 22px;
     }
 
     .bio-top-text {
@@ -250,8 +249,9 @@
     .identity-links {
       margin-top: 10px;
       display: flex;
-      flex-direction: column;
-      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px 18px;
     }
 
     .identity-links a {
@@ -260,6 +260,7 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
+      white-space: nowrap;
       border-bottom: none;
     }
 
@@ -268,6 +269,10 @@
       text-decoration: underline;
       text-underline-offset: 2px;
       text-decoration-color: var(--hover-underline);
+    }
+
+    .identity-links a:not([href]):hover {
+      text-decoration: none;
     }
 
     .identity-links a::before {
@@ -280,13 +285,15 @@
     }
 
     .bio-photo {
-      flex: 0 0 150px;
+      flex: 0 0 clamp(200px, 29vw, 260px);
     }
 
     .bio-photo img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
+      object-fit: cover;
+      object-position: center;
       border-radius: var(--radius);
       box-shadow: 0 4px 18px rgba(0, 0, 0, .10), 0 1px 3px rgba(0, 0, 0, .06);
     }
@@ -303,6 +310,10 @@
       letter-spacing: -0.03em;
       margin: 0;
       line-height: 1.15;
+    }
+
+    .bio-paragraphs {
+      margin-top: 24px;
     }
 
     .bio-paragraphs p {
@@ -803,10 +814,6 @@
         gap: 20px;
       }
 
-      .bio-photo {
-        flex-basis: 120px;
-      }
-
       h1 {
         font-size: 27px;
         line-height: 1.15;
@@ -828,15 +835,21 @@
       }
     }
 
-    @media (max-width:480px) {
+    @media (max-width:600px) {
       .bio-top {
         flex-direction: column;
+        align-items: flex-start;
         gap: 16px;
       }
 
       .bio-photo {
         flex-basis: auto;
-        width: min(150px, 42vw);
+        width: min(210px, 55vw);
+      }
+
+      .bio-photo img {
+        height: auto;
+        object-fit: contain;
       }
     }
 
@@ -897,7 +910,7 @@
     <section id="bio" aria-label="Bio">
       <div class="bio-top">
         <div class="bio-photo">
-          <img src="ziyiguan.jpg" alt="Ziyi Guan"
+          <img src="ziyiguan.webp" alt="Portrait of Ziyi Guan" width="800" height="1067"
             onerror="this.style.display='none'">
         </div>
         <div class="bio-top-text">
@@ -907,9 +920,6 @@
             <a href="https://scholar.google.com/citations?user=rjHY4GEAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
             <a href="ZiyiGuan-CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
-        </div>
-      </div>
-
           <div class="bio-paragraphs">
             <p>
               I am a Swiss NSF Postdoc.Mobility fellow and postdoctoral researcher at MIT and NYU. I am hosted by
@@ -936,6 +946,8 @@
               probabilistic proof systems, cryptography, complexity theory and quantum computing.
             </p>
           </div>
+        </div>
+      </div>
     </section>
 
 
