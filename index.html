@@ -532,6 +532,40 @@
       border-bottom: 1px solid var(--hover-underline);
     }
 
+    .paper-title-toggle {
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      font-family: inherit;
+      text-align: left;
+      white-space: normal;
+      cursor: pointer;
+    }
+
+    .paper-title-toggle:hover {
+      background: none;
+      color: var(--text);
+      text-decoration: underline;
+      text-decoration-color: var(--hover-underline);
+      text-underline-offset: 3px;
+    }
+
+    .paper-title-toggle:focus-visible {
+      outline: 2px solid var(--muted);
+      outline-offset: 4px;
+    }
+
+    .paper-abstract .math {
+      white-space: nowrap;
+    }
+
+    .paper-abstract .abstract-equation {
+      margin: 10px 0;
+      text-align: center;
+    }
+
     .author-emphasis {
       font-weight: 650;
     }
@@ -966,7 +1000,8 @@
               <div class="num">19.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">It Takes Two: Proofs of Work for Fiat&ndash;Shamir</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs19" title="Show or hide abstract">It Takes Two: Proofs of Work for Fiat&ndash;Shamir</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2026/2326" target="_blank"
                       rel="noreferrer">[ePrint]</a></span>
                 </div>
@@ -974,6 +1009,28 @@
                   <a href="https://cs.nyu.edu/~bb/" target="_blank" rel="noreferrer">Benedikt Bünz</a>,
                   <a href="https://j-cqy.github.io/" target="_blank" rel="noreferrer">Jessica Chen</a>,
                   <span class="author-emphasis">Ziyi Guan</span>
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2026/2326 -->
+                <div id="paperabs19" class="abstract paper-abstract">
+                  <p>In the random oracle model (ROM), proof of work (PoW) serves two roles in the Fiat–Shamir
+                    transformation. First, in challenge grinding, the prover must solve a puzzle for each candidate
+                    challenge, which amplifies soundness and reduces proof size and verifier time. This requires a
+                    non-amortizing PoW: computing <span class="math"><var>k</var></span> distinct accepted
+                    puzzle–solution–proof triples costs, in expectation, roughly <span
+                    class="math"><var>k</var></span> times the work of computing one. Second, PoW can prevent
+                    diagonalization attacks, in which the statement's circuit computes its own challenge. The XFS
+                    transformation of Arnon and Yogev (CRYPTO 2025) uses a strong PoW: an adversary that does
+                    substantially less work than the honest prover solves a random puzzle with only negligible
+                    probability, even after bounded preprocessing.</p>
+                  <p>Can a single PoW be both strong and non-amortizing? We prove that it cannot, whenever the
+                    verifier is sufficiently cheaper than the prover. Our main technical tool converts computational
+                    uniqueness into statistical uniqueness without increasing verifier query complexity. Combined
+                    with the search bound of Guan, Riazanov, and Yuan (CRYPTO 2025), which builds on Smyth (STOC
+                    2002), it resolves their open question.</p>
+                  <p>To overcome this barrier, our XFS-with-grinding transformation for relativized <span
+                    class="math">Σ</span>-protocols composes a strong PoW with a non-amortizing one. The resulting
+                    non-interactive argument retains the soundness amplification of grinding and the security
+                    guarantee of XFS in the relativized ROM, with additive prover work for the two PoWs.</p>
                 </div>
               </div>
             </div>
@@ -987,14 +1044,41 @@
               <div class="num">18.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Can AI Oversight Be Zero Knowledge?</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs18" title="Show or hide abstract">Can AI Oversight Be Zero Knowledge?</button><span
                     class="titlelinks"><a href="https://arxiv.org/abs/2610.01995" target="_blank"
-                      rel="noreferrer">[arXiv]</a></span>
+                      rel="noreferrer">[arXiv]</a> <a href="https://eprint.iacr.org/2026/2299" target="_blank"
+                      rel="noreferrer">[ePrint]</a></span>
                 </div>
                 <div class="meta">
                   <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noreferrer">Alessandro Chiesa</a>,
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://burcu-yildiz.github.io/"
                     target="_blank" rel="noreferrer">Burcu Yıldız</a>
+                </div>
+                <!-- Abstract source: https://arxiv.org/abs/2610.01995 -->
+                <div id="paperabs18" class="abstract paper-abstract">
+                  <p>AI systems increasingly produce outputs from confidential data, such as a fitness-for-duty
+                    assessment from medical records or the predicted properties of a drug candidate from its secret
+                    structure. It is important to verify that such outputs are correct without revealing the
+                    underlying data. A recent line of work studies verification of AI outputs via interactive proofs
+                    and debate for oracle-aided computation, where correctness may depend on an oracle such as human
+                    judgment, a physical experiment, or the web. These works focus on verification by a verifier
+                    that runs much faster than the computation. However, such efficient verification is impossible
+                    for general oracle-aided computation, and these works therefore rely on additional assumptions.
+                    We focus instead on privacy: allowing the verifier to run in time polynomial in the computation,
+                    we ask whether interactive arguments for oracle-aided computation can be zero knowledge, so that
+                    the verifier learns nothing about the confidential data beyond the correctness of the
+                    output.</p>
+                  <p>We prove that, in general, they cannot. In the random oracle model, there are no zero-knowledge
+                    proofs for all oracle-aided computations, even if both the prover and the verifier are allowed
+                    to run much longer than the computation itself. The impossibility extends to debate, a canonical
+                    model for scalable oversight.</p>
+                  <p>On the positive side, we show that if the oracle attaches a cryptographic signature to each of
+                    its answers, then every oracle-aided computation can be verified in zero knowledge with an
+                    efficient prover and verifier, assuming only collision-resistant hash functions. Beyond privacy,
+                    this also gives an alternative approach to scalable oversight that relies neither on an honest
+                    opponent, as in debate, nor on the robustness of the computation, as in prior single-prover
+                    protocols.</p>
                 </div>
               </div>
             </div>
@@ -1008,7 +1092,8 @@
               <div class="num">17.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">The Cost of Rewinding for Succinct Arguments: Strict-Time Barriers and Expected-Time Security</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs17" title="Show or hide abstract">The Cost of Rewinding for Succinct Arguments: Strict-Time Barriers and Expected-Time Security</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2026/2209" target="_blank"
                       rel="noreferrer">[ePrint]</a></span>
                 </div>
@@ -1017,6 +1102,25 @@
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://priv.pub/" target="_blank"
                     rel="noreferrer">William Wang</a>, <a href="https://wu-yuetian.com/" target="_blank"
                     rel="noreferrer">Yuetian Wu</a>
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2026/2209 -->
+                <div id="paperabs17" class="abstract paper-abstract">
+                  <p>Succinct arguments are central cryptographic objects, underlying various applications such as
+                    blockchains and image authentication. Almost all succinct arguments used in practice follow the
+                    commit-and-open paradigm introduced by Kilian (STOC 1992): commit to a probabilistic proof, then
+                    open the few locations the verifier queries. Decades of work have generalized and optimized this
+                    paradigm, yet its exact provable security in the standard model remains unclear. Existing
+                    analyses proceed by rewinding, and they leave gaps: strict-time analyses lose an
+                    inverse-polynomial factor, while expected-time analyses are sharper but apply only to special
+                    cases of this paradigm.</p>
+                  <p>We resolve both gaps. On the negative side, we show that the strict-time loss is inherent: no
+                    strict polynomial-time reduction relying on a black-box extractor can achieve negligible
+                    knowledge error (unless the underlying language is easy). On the positive side, we give a new
+                    expected-time analysis, achieving negligible soundness and knowledge errors via an expected
+                    polynomial-time reduction against expected polynomial-time adversaries, at the full generality
+                    of the paradigm, capturing multi-round and functional variants such as polynomial and linear
+                    IOPs compiled with the corresponding commitments. This is the first standard-model analysis to
+                    reach this regime for succinct arguments deployed in practice.</p>
                 </div>
               </div>
             </div>
@@ -1030,13 +1134,36 @@
               <div class="num">16.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Micali’s SNARG, Function Vector Commitments, and Fiat&ndash;Shamir</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs16" title="Show or hide abstract">Micali’s SNARG, Function Vector Commitments, and Fiat&ndash;Shamir</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2025/2328" target="_blank"
                       rel="noreferrer">[ePrint]</a></span>
                 </div>
                 <div class="meta">
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://www.eylonyogev.com/" target="_blank"
                     rel="noreferrer">Eylon Yogev</a>
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2025/2328 -->
+                <div id="paperabs16" class="abstract paper-abstract">
+                  <p>Micali's construction of succinct non-interactive arguments (SNARGs) combines a
+                    probabilistically checkable proof (PCP), a vector commitment, and the Fiat–Shamir
+                    transformation. Its security is established in the random oracle model, but replacing the random
+                    oracle with an explicit hash function presents a fundamental challenge: Fiat–Shamir can fail for
+                    interactive arguments, and certain choices of the commitment scheme make Micali's construction
+                    unsound for every instantiation of the Fiat–Shamir hash.</p>
+                  <p>We show how to instantiate Micali's construction in the standard model assuming LWE and
+                    function vector commitments with <em>function statistical binding</em> for <span
+                    class="math">P/poly</span>, obtaining a non-adaptively sound SNARG for <span
+                    class="math">NP</span>. Our construction combines such a commitment with an LWE-based
+                    correlation-intractaxble hash and a PCP satisfying a new property, <em>shadow soundness</em>. A
+                    PCP shadow is a short digest that preserves the information needed to determine the verifier's
+                    decision. By statistically binding the commitment to this shadow, we obtain the sparse relation
+                    needed to prove Fiat–Shamir soundness.</p>
+                  <p>We construct shadow PCPs for <span class="math">NP</span> whose shadow algorithms lie in <span
+                    class="math">NC</span>, and we give a feasibility instantiation of the commitment scheme from
+                    strong assumptions. Our results thus identify a concrete cryptographic target for instantiating
+                    Micali's SNARG under weaker assumptions, and show that the framework does not admit an attack
+                    that succeeds for every choice of its components.</p>
                 </div>
               </div>
             </div>
@@ -1050,7 +1177,8 @@
               <div class="num">15.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">How to Build Succinct Arguments From Succinct Commitments</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs15" title="Show or hide abstract">How to Build Succinct Arguments From Succinct Commitments</button><span
                     class="titlelinks"><a href="https://ieeexplore.ieee.org/abstract/document/11664735/" target="_blank"
                       rel="noreferrer">[IEEE]</a></span>
                 </div>
@@ -1060,6 +1188,22 @@
                     rel="noreferrer">Christian Knabenhans</a>, <a href="https://www.eylonyogev.com/" target="_blank"
                     rel="noreferrer">Eylon Yogev</a><br>
                   Proceedings of the IEEE, 2026
+                </div>
+                <!-- Abstract source: https://cris.biu.ac.il/en/publications/how-to-build-succinct-arguments-from-succinct-commitments/ -->
+                <div id="paperabs15" class="abstract paper-abstract">
+                  <p>One of the celebrated achievements of modern cryptography is formulating and constructing a
+                    multitude of proof systems that, thanks to their surprising properties, act as invaluable tools
+                    in theoretical computer science and even beyond that. This article focuses on succinct
+                    arguments, a class of proof systems that has received much attention due to their notable
+                    efficiency properties, which have made them indispensable tools in secure distributed systems.
+                    Informally, in a succinct argument for an NP language, the communication complexity is much
+                    smaller than the number of bits in the witness. In this article, we provide an introduction to
+                    succinct arguments constructed from succinct commitments. This notable class includes elegant
+                    constructions that capture numerous concrete examples of succinct arguments that have both
+                    theoretical and practical applications. In particular, this class includes the most performant
+                    succinct arguments known, including ones proved to be postquantum secure. We structure ideas in
+                    progressive generality, starting from the well-known Kilian protocol, and also touch on other
+                    topics such as the Fiat–Shamir transformation.</p>
                 </div>
               </div>
             </div>
@@ -1073,7 +1217,8 @@
               <div class="num">14.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Succinct Arguments from Lattice-Based Non-Interactive Linear Commitments</div>
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs14" title="Show or hide abstract">Succinct Arguments from Lattice-Based Non-Interactive Linear Commitments</button>
                 </div>
                 <div class="meta">
                   <a href="https://jbootle.github.io/" target="_blank" rel="noreferrer">Jonathan Bootle</a>, <span
@@ -1081,6 +1226,36 @@
                     rel="noreferrer">Christian Knabenhans</a><br>
                   TCC 2026 (24th Theory of Cryptography Conference)<br>
                   ZKProof 8, Rome, Italy
+                </div>
+                <!-- Abstract source: https://cknabs.github.io/publications/#lattice-liop-lc -->
+                <div id="paperabs14" class="abstract paper-abstract">
+                  <p>Succinct arguments are often built by combining a functional interactive oracle proof with a
+                    functional commitment scheme. We focus on non-interactive lattice-based linear commitments,
+                    whose algebraic structure enables better efficiency and fewer rounds compared to the hash-based
+                    approaches, while still offering plausible post-quantum security and recursion-friendly
+                    verification.</p>
+                  <p>It is unclear whether existing lattice-based non-interactive LCs suffice for constructing
+                    succinct arguments with current techniques: these applications typically require strong
+                    guarantees such as extractability, whereas known constructions satisfy only weaker notions such
+                    as evaluation binding.</p>
+                  <p>In this work, we show that lattice-based non-interactive LCs can indeed be used to construct
+                    succinct arguments under falsifiable assumptions. Our main contributions are as follows.</p>
+                  <ul>
+                  <li>We show that any linear commitment scheme that is both evaluation binding and homomorphic
+                    satisfies a notion called coordinate-wise function binding. We instantiate this framework with
+                    two constructions, capturing two prominent families of lattice-based non-interactive LCs: one
+                    based on the k-MISIS uber-assumption (Albrecht, Cini, Lai, Malavolta, and Thyagarajan,
+                    CRYPTO’22; Fisch, Liu, and Vesely, CRYPTO’23), and one inspired by a recent SIS-based
+                    construction of Wee (CRYPTO’25).</li>
+                  <li>We construct a holographic linear interactive oracle proof (LIOP) for NP that is compatible
+                    with these linear commitments. Our LIOP asymptotically improves the information-theoretic proof
+                    underlying the LaBRADOR argument of Beullens and Seiler (CRYPTO’23).</li>
+                  <li>We give a new compiler, adapted from the Funky protocol (Chiesa, Guan, Knabenhans, and Yu,
+                    CRYPTO’26), that combines functional interactive oracle proofs with functional commitments. Our
+                    compiler supports query predicates, norm-bounded IOP provers, and holography, and relies on
+                    weaker security notions from the underlying commitments that are better aligned with known
+                    lattice-based constructions.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1094,8 +1269,8 @@
               <div class="num">13.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">On the Fiat&#8211;Shamir Security of Succinct Arguments from Functional Commitments
-                  </div><span class="titlelinks"><a href="https://eprint.iacr.org/2025/902" target="_blank"
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs13" title="Show or hide abstract">On the Fiat&#8211;Shamir Security of Succinct Arguments from Functional Commitments</button><span class="titlelinks"><a href="https://eprint.iacr.org/2025/902" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="https://www.youtube.com/live/pAm225U1s9c" target="_blank"
                       rel="noreferrer">[talk by Christian]</a></span>
                 </div>
@@ -1105,6 +1280,24 @@
                     rel="noreferrer">Christian Knabenhans</a>, Zihan Yu<br>
                   Crypto 2026 (46th Annual International Cryptology Conference)<br>
                   ZKProof 7, Sofia, Bulgaria
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2025/902 -->
+                <div id="paperabs13" class="abstract paper-abstract">
+                  <p>We study the security of a popular paradigm for constructing SNARGs, closing a key security gap
+                    left open by prior work. The paradigm consists of two steps: first, construct a public-coin
+                    succinct interactive argument by combining a functional interactive oracle proof (FIOP) and a
+                    functional commitment scheme (FC scheme); second, apply the Fiat–Shamir transformation in the
+                    random oracle model. Prior work did not consider this generalized setting nor prove the security
+                    of this second step (even in special cases).</p>
+                  <p>We prove that the succinct argument obtained in the first step satisfies state-restoration
+                    security, thereby ensuring that the second step does in fact yield a succinct non-interactive
+                    argument. This is provided the FIOP satisfies state-restoration security and the FC scheme
+                    satisfies a natural state-restoration variant of function binding (a generalization of position
+                    binding for vector commitment schemes).</p>
+                  <p>Moreover, we prove that notable FC schemes satisfy state-restoration function binding, allowing
+                    us to establish, via our main result, the security of several SNARGs of interest (in the random
+                    oracle model). This includes a modular security proof of Plonk, in the ROM based on falsifiable
+                    Diffie–Hellman assumptions.</p>
                 </div>
               </div>
             </div>
@@ -1118,7 +1311,8 @@
               <div class="num">12.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">All Polynomial Generators Preserve Distance with Mutual Correlated Agreement</div>
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs12" title="Show or hide abstract">All Polynomial Generators Preserve Distance with Mutual Correlated Agreement</button>
                   <span class="titlelinks"><a href="https://eprint.iacr.org/2025/2051" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="https://www.youtube.com/watch?v=tnEoWWe9XMY"
                       target="_blank" rel="noreferrer">[talk by Ignacio]</a> </span>
@@ -1129,6 +1323,29 @@
                     href="https://nachitomanzur.github.io/" target="_blank" rel="noreferrer">Ignacio Manzur</a><br>
                   CCC 2026 (41st Computational Complexity Conference)<br>
                   ZKProof 8, Rome, Italy
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2025/2051 -->
+                <div id="paperabs12" class="abstract paper-abstract">
+                  <p>A generator is a function that maps a random seed to a list of coefficients. We study
+                    generators that preserve distance to a linear code: the linear combination of any list of
+                    vectors using coefficients sampled by the generator has distance to the code no smaller than
+                    that of the original vectors, except for a small error. Distance preservation plays a central
+                    role in modern probabilistic proofs, and has been formalized in several ways. We study mutual
+                    correlated agreement, the strongest known form of distance preservation.</p>
+                  <p>We initiate a systematic study of mutual correlated agreement, aiming to characterize the class
+                    of generators with this property. Towards this, we study polynomial generators, a rich class
+                    that includes all examples of generators considered in the distance preservation literature. Our
+                    main result is that all polynomial generators guarantee mutual correlated agreement for every
+                    linear code. This improves on prior work both in generality (the class of generators covered)
+                    and in parameters (the error bounds).</p>
+                  <p>We additionally provide new results for the case where the linear code is a Reed–Solomon code,
+                    which is of particular interest in applications. We prove that all polynomial generators satisfy
+                    mutual correlated agreement for Reed–Solomon codes up to the Johnson bound. In particular, we
+                    improve upon the state-of-the-art by Ben-Sasson, Carmon, Ishai, Kopparty, and Saraf (FOCS 2020)
+                    and answer a question posed by Arnon, Chiesa, Fenzi, and Yogev (Eurocrypt 2025).</p>
+                  <p>Along the way we develop a flexible and general toolbox for mutual correlated agreement, and
+                    are the first to establish distance preservation for generators that lie beyond polynomial
+                    generators.</p>
                 </div>
               </div>
             </div>
@@ -1142,7 +1359,8 @@
               <div class="num">11.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Quantum Rewinding for IOP-Based Succinct Arguments</div><span class="titlelinks"><a
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs11" title="Show or hide abstract">Quantum Rewinding for IOP-Based Succinct Arguments</button><span class="titlelinks"><a
                       href="https://eprint.iacr.org/2025/947" target="_blank" rel="noreferrer">[ePrint]</a> <a
                       href="slides/postquantum-ibcs.pdf" target="_blank" rel="noreferrer">[slides]</a></span>
                 </div>
@@ -1153,6 +1371,25 @@
                     class="author-emphasis">Ziyi Guan</span>, <a href="https://spooner.cc/" target="_blank"
                     rel="noreferrer">Nicholas Spooner</a><br>
                   TCC 2025 (23rd Theory of Cryptography Conference)
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2025/947 -->
+                <div id="paperabs11" class="abstract paper-abstract">
+                  <p>We analyze the post-quantum security of succinct interactive arguments constructed from
+                    interactive oracle proofs (IOPs) and vector commitment schemes. Specifically, we prove that an
+                    interactive variant of the <em>BCS transformation</em> is secure in the standard model against
+                    quantum adversaries when the vector commitment scheme is collapse binding.</p>
+                  <p>Prior work established the post-quantum security of Kilian's succinct interactive argument, a
+                    special case of the BCS transformation for one-message IOPs (i.e., PCPs). That analysis is
+                    inherently limited to one message because the reduction, like all prior quantum rewinding
+                    reductions, aims to extract classical information (a PCP string) from the quantum argument
+                    adversary. Our reduction overcomes this limitation by instead extracting a <em>quantum
+                    algorithm</em> that implements an IOP adversary; representing such an adversary classically may
+                    in general require exponential complexity.</p>
+                  <p>Along the way we define <em>collapse position binding</em>, which we propose as the “correct”
+                    definition of collapse binding for vector commitment schemes, eliminating shortcomings of prior
+                    definitions.</p>
+                  <p>As an application of our results, we obtain post-quantum secure succinct arguments, in the
+                    standard model (no oracles), with the <em>best asymptotic complexity known</em>.</p>
                 </div>
               </div>
             </div>
@@ -1166,7 +1403,8 @@
               <div class="num">10.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Relativized Succinct Arguments in the ROM Do Not Exist</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs10" title="Show or hide abstract">Relativized Succinct Arguments in the ROM Do Not Exist</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2024/728" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="slides/relativized-snargs.pdf" target="_blank"
                       rel="noreferrer">[slides]</a></span>
@@ -1177,6 +1415,21 @@
                   <span class="author-emphasis">Ziyi Guan</span><br>
                   TCC 2025 (23rd Theory of Cryptography Conference)<br>
                   ZKProof 7, Sofia, Bulgaria
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2024/728 -->
+                <div id="paperabs10" class="abstract paper-abstract">
+                  <p>A relativized succinct argument in the random oracle model (ROM) is a succinct argument in the
+                    ROM that can prove/verify the correctness of computations that involve queries to the random
+                    oracle. We prove that relativized succinct arguments in the ROM do not exist. The impossibility
+                    holds even if the succinct argument is interactive, and even if soundness is computational
+                    (rather than statistical).</p>
+                  <p>This impossibility puts on a formal footing the commonly-held belief that succinct arguments
+                    require non-relativizing techniques. Moreover, our results stand in sharp contrast with other
+                    oracle models, for which a recent line of work has constructed relativized succinct
+                    non-interactive arguments (SNARGs). Indeed, relativized SNARGs are a powerful primitive that,
+                    e.g., can be used to obtain constructions of IVC (incrementally-verifiable computation) and PCD
+                    (proof-carrying data) based on falsifiable cryptographic assumptions. Our results rule out this
+                    approach for IVC and PCD in the ROM.</p>
                 </div>
               </div>
             </div>
@@ -1190,7 +1443,8 @@
               <div class="num">9.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Breaking Verifiable Delay Functions in the Random Oracle Model</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs9" title="Show or hide abstract">Breaking Verifiable Delay Functions in the Random Oracle Model</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2024/766" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="slides/VDF-uniqueness.pdf" target="_blank"
                       rel="noreferrer">[slides]</a> <a href="https://tunyash.github.io/vdf_slides.html" target="_blank"
@@ -1201,6 +1455,25 @@
                     rel="noreferrer">Artur Riazanov</a>, <a href="https://wwwaltzzz.github.io/" target="_blank"
                     rel="noreferrer">Weiqiang Yuan</a><br>
                   Crypto 2025 (45th Annual International Cryptology Conference)
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2024/766 -->
+                <div id="paperabs9" class="abstract paper-abstract">
+                  <p>This work resolves the open problem of whether verifiable delay functions (VDFs) can be
+                    constructed in the random oracle model. A VDF is a cryptographic primitive that requires a long
+                    time to compute (even with parallelization), but produces a unique output that is efficiently
+                    and publicly verifiable.</p>
+                  <p>We prove that VDFs do not exist in the random oracle model. This also rules out black-box
+                    constructions of VDFs from other cryptographic primitives, such as one-way functions, one-way
+                    permutations and collision-resistant hash functions.</p>
+                  <p>Prior to our work, Mahmoody, Smith and Wu (ICALP 2020) prove that <em>perfectly unique</em>
+                    VDFs (a much stronger form of VDFs) do not exist in the random oracle model; on the other hand,
+                    Ephraim, Freitag, Komargodski, and Pass (Eurocrypt 2020) construct VDFs in the random oracle
+                    model assuming the hardness of repeated squaring. Our result is optimal – we bridge the current
+                    gap between previously known impossibility results and existing constructions.</p>
+                  <p>We initiate the study of <em>proof of work functions</em>, a new cryptographic primitive that
+                    shares similarities with both VDFs and proof of works. We show that a stronger form of it does
+                    not exist in the random oracle model, leaving open the fascinating possibility of a
+                    random-oracle-based construction.</p>
                 </div>
               </div>
             </div>
@@ -1214,7 +1487,8 @@
               <div class="num">8.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Generalised Linial-Nisan Conjecture is False for DNFs</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs8" title="Show or hide abstract">Generalised Linial-Nisan Conjecture is False for DNFs</button><span
                     class="titlelinks"><a href="https://eccc.weizmann.ac.il/report/2025/058/" target="_blank"
                       rel="noreferrer">[ECCC]</a></span>
                 </div>
@@ -1228,6 +1502,17 @@
                     rel="noreferrer">Weiqiang Yuan</a><br>
                   CCC 2025 (40th Computational Complexity Conference)
                 </div>
+                <!-- Abstract source: https://eccc.weizmann.ac.il/report/2025/058/ -->
+                <div id="paperabs8" class="abstract paper-abstract">
+                  <p>Aaronson (STOC 2010) conjectured that almost <span class="math"><var>k</var></span>-wise
+                    independence fools constant-depth circuits; he called this the generalised Linial-Nisan
+                    conjecture. Aaronson himself later found a counterexample for depth-3 circuits. We give here an
+                    improved counterexample for depth-2 circuits (DNFs). This shows, for instance, that Bazzi's
+                    celebrated result (<span class="math"><var>k</var></span>-wise independence fools DNFs) cannot
+                    be generalised in a natural way. We also propose a way to circumvent our counterexample: We
+                    define a new notion of pseudorandomness called local couplings and show that it fools DNFs and
+                    even decision lists.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -1240,7 +1525,8 @@
               <div class="num">7.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Untangling the Security of Kilian’s Protocol: Upper and Lower Bounds</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs7" title="Show or hide abstract">Untangling the Security of Kilian’s Protocol: Upper and Lower Bounds</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2024/1434" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="slides/untangling-kilian.pdf" target="_blank"
                       rel="noreferrer">[slides]</a></span>
@@ -1252,6 +1538,29 @@
                     rel="noreferrer">Nicholas Spooner</a>, <a href="https://www.eylonyogev.com/" target="_blank"
                     rel="noreferrer">Eylon Yogev</a><br>
                   TCC 2024 (22nd Theory of Cryptography Conference)
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2024/1434 -->
+                <div id="paperabs7" class="abstract paper-abstract">
+                  <p>Sigma protocols are elegant cryptographic proofs that have become a cornerstone of modern
+                    cryptography. A notable example is Schnorr's protocol, a zero-knowledge proof-of-knowledge of a
+                    discrete logarithm. Despite extensive research, the security of Schnorr's protocol in the
+                    standard model is not fully understood.</p>
+                  <p>In this paper we study Kilian's protocol, an influential public-coin interactive protocol that,
+                    while not a sigma protocol, shares striking similarities with sigma protocols. The first example
+                    of a succinct argument, Kilian's protocol is proved secure via rewinding, the same idea used to
+                    prove sigma protocols secure. In this paper we show how, similar to Schnorr's protocol, a
+                    precise understanding of the security of Kilian's protocol remains elusive. We contribute new
+                    insights via upper bounds and lower bounds.</p>
+                  <ul>
+                  <li><strong>Upper bounds.</strong> We establish the tightest known bounds on the security of
+                    Kilian's protocol in the standard model, via strict-time reductions and via expected-time
+                    reductions. Prior analyses are strict-time reductions that incur large overheads or assume
+                    restrictive properties of the PCP underlying Kilian's protocol.</li>
+                  <li><strong>Lower bounds.</strong> We prove that significantly improving on the bounds that we
+                    establish for Kilian's protocol would imply improving the security analysis of Schnorr's
+                    protocol beyond the current state-of-the-art (an open problem). This partly explains the
+                    difficulties in obtaining tight bounds for Kilian's protocol.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1265,7 +1574,8 @@
               <div class="num">6.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Security Bounds for Proof-Carrying Data from Straightline Extractors</div><span
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs6" title="Show or hide abstract">Security Bounds for Proof-Carrying Data from Straightline Extractors</button><span
                     class="titlelinks"><a href="https://eprint.iacr.org/2023/1646" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="slides/ROM-PCD.pdf" target="_blank"
                       rel="noreferrer">[slides]</a></span>
@@ -1276,6 +1586,30 @@
                     target="_blank" rel="noreferrer">Eylon Yogev</a><br>
                   TCC 2024 (22nd Theory of Cryptography Conference)<br>
                   ZKProof 7, Sofia, Bulgaria
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2023/1646 -->
+                <div id="paperabs6" class="abstract paper-abstract">
+                  <p>Proof-carrying data (PCD) is a powerful cryptographic primitive that allows mutually
+                    distrustful parties to perform distributed computation in an efficiently verifiable manner.
+                    Real-world deployments of PCD have sparked keen interest within the applied community and
+                    industry.</p>
+                  <p>Known constructions of PCD are obtained by recursively-composing SNARKs or related primitives.
+                    Unfortunately, known security analyses incur expensive blowups, which practitioners have
+                    disregarded as the analyses would lead to setting parameters that are prohibitively
+                    expensive.</p>
+                  <p>In this work we study the concrete security of recursive composition, with the goal of better
+                    understanding how to reasonably set parameters for certain PCD constructions of practical
+                    interest. Our main result is that PCD obtained from SNARKs with <em>straightline knowledge
+                    soundness</em> has essentially the same security as the underlying SNARK (i.e., recursive
+                    composition incurs essentially no security loss).</p>
+                  <p>We describe how straightline knowledge soundness is achieved by SNARKs in several oracle
+                    models, which results in a highly efficient security analysis of PCD that makes black-box use of
+                    the SNARK's oracle (there is no need to instantiated the oracle to carry out the security
+                    reduction).</p>
+                  <p>As a notable application, our work offers an idealized model that provides new, albeit
+                    heuristic, insights for the concrete security of <em>recursive STARKs</em> used in blockchain
+                    systems. Our work could be viewed as partial evidence justifying the parameter choices for
+                    recursive STARKs made by practitioners.</p>
                 </div>
               </div>
             </div>
@@ -1289,8 +1623,8 @@
               <div class="num">5.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Quantum and Classical Communication Complexity of Permutation-Invariant Functions
-                  </div><span class="titlelinks"><a href="https://arxiv.org/abs/2401.00454" target="_blank"
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs5" title="Show or hide abstract">Quantum and Classical Communication Complexity of Permutation-Invariant Functions</button><span class="titlelinks"><a href="https://arxiv.org/abs/2401.00454" target="_blank"
                       rel="noreferrer">[arXiv]</a></span>
                 </div>
                 <div class="meta">
@@ -1298,6 +1632,21 @@
                     target="_blank" rel="noreferrer">Penghui Yao</a>, Zekun Ye<br>
                   STACS 2024 (41st International Symposium on Theoretical Aspects of Computer Science)<br>
                   IEEE Transactions on Information Theory
+                </div>
+                <!-- Abstract source: https://arxiv.org/abs/2401.00454 -->
+                <div id="paperabs5" class="abstract paper-abstract">
+                  <p>This paper gives a nearly tight characterization of the quantum communication complexity of the
+                    permutation-invariant Boolean functions. With such a characterization, we show that the quantum
+                    and randomized communication complexity of the permutation-invariant Boolean functions are
+                    quadratically equivalent (up to a logarithmic factor). Our results extend a recent line of
+                    research regarding query complexity [AA14, Cha19, BCG+20] to communication complexity, showing
+                    symmetry prevents exponential quantum speedups.</p>
+                  <p>Furthermore, we show the Log-rank Conjecture holds for any non-trivial total
+                    permutation-invariant Boolean function. Moreover, we establish a relationship between the
+                    quantum/classical communication complexity and the approximate rank of permutation-invariant
+                    Boolean functions. This implies the correctness of the Log-approximate-rank Conjecture for
+                    permutation-invariant Boolean functions in both randomized and quantum settings (up to a
+                    logarithmic factor).</p>
                 </div>
               </div>
             </div>
@@ -1311,7 +1660,8 @@
               <div class="num">4.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">On Parallel Repetition of PCPs</div><span class="titlelinks"><a
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs4" title="Show or hide abstract">On Parallel Repetition of PCPs</button><span class="titlelinks"><a
                       href="https://eprint.iacr.org/2023/1714" target="_blank" rel="noreferrer">[ePrint]</a> <a
                       href="slides/pr-pcp.pdf" target="_blank" rel="noreferrer">[slides]</a></span>
                 </div>
@@ -1320,6 +1670,27 @@
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://burcu-yildiz.github.io/"
                     target="_blank" rel="noreferrer">Burcu Yıldız</a><br>
                   ITCS 2024 (15th Innovations in Theoretical Computer Science)
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2023/1714 -->
+                <div id="paperabs4" class="abstract paper-abstract">
+                  <p>Parallel repetition refers to a set of valuable techniques used to reduce soundness error of
+                    probabilistic proofs while saving on certain efficiency measures. Parallel repetition has been
+                    studied for interactive proofs (IPs) and multi-prover interactive proofs (MIPs). In this paper
+                    we initiate the study of parallel repetition for probabilistically checkable proofs (PCPs).</p>
+                  <p>We show that, perhaps surprisingly, parallel repetition of a PCP can increase soundness error,
+                    in fact bringing the soundness error to one as the number of repetitions tends to infinity. This
+                    "failure" of parallel repetition is common: we find that it occurs for a wide class of natural
+                    PCPs for NP-complete languages. We explain this unexpected phenomenon by providing a
+                    characterization result: the parallel repetition of a PCP brings the soundness error to zero if
+                    and only if a certain "MIP projection" of the PCP has soundness error strictly less than one. We
+                    show that our characterization is tight via a suitable example. Moreover, for those cases where
+                    parallel repetition of a PCP does bring the soundness error to zero, the aforementioned
+                    connection to MIPs offers preliminary results on the rate of decay of the soundness error.</p>
+                  <p>Finally, we propose a simple variant of parallel repetition, called consistent parallel
+                    repetition (CPR), which has the same randomness complexity and query complexity as the plain
+                    variant of parallel repetition. We show that CPR brings the soundness error to zero for every
+                    PCP (with non-trivial soundness error). In fact, we show that CPR decreases the soundness error
+                    at an exponential rate in the repetition parameter.</p>
                 </div>
               </div>
             </div>
@@ -1333,7 +1704,8 @@
               <div class="num">3.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Depth-3 Circuits for Inner-Product</div><span class="titlelinks"><a
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs3" title="Show or hide abstract">Depth-3 Circuits for Inner-Product</button><span class="titlelinks"><a
                       href="https://eccc.weizmann.ac.il/report/2023/106/" target="_blank" rel="noreferrer">[ECCC]</a> <a
                       href="slides/IP-depth-3.pdf" target="_blank" rel="noreferrer">[slides]</a></span>
                 </div>
@@ -1342,6 +1714,24 @@
                     class="author-emphasis">Ziyi Guan</span>, Tiberiu Mosnoi<br>
                   MFCS 2023 (48th International Symposium on Mathematical Foundations of Computer Science)<br>
                   Information and Computation (invited to special issue on MFCS 2023)
+                </div>
+                <!-- Abstract source: https://eccc.weizmann.ac.il/report/2023/106/ -->
+                <div id="paperabs3" class="abstract paper-abstract">
+                  <p>What is the <span class="math">Σ<sub>3</sub><sup>2</sup></span>-circuit complexity (depth 3,
+                    bottom-fanin 2) of the <span class="math">2<var>n</var></span>-bit inner product function? The
+                    complexity is known to be exponential <span
+                    class="math">2<sup><var>α</var><sub><var>n</var></sub> <var>n</var></sup></span> for some <span
+                    class="math"><var>α</var><sub><var>n</var></sub> = Ω(1)</span>. We show that the limiting
+                    constant <span class="math"><var>α</var> = lim sup <var>α</var><sub><var>n</var></sub></span>
+                    satisfies</p>
+                  <div class="abstract-equation">0.847… ≤ <var>α</var> ≤ 0.965….</div>
+                  <p>Determining <span class="math"><var>α</var></span> is one of the seemingly-simplest open
+                    problems about depth-3 circuits. The question was recently raised by Golovnev, Kulikov, and
+                    Williams (ITCS 2021) and Frankl, Gryaznov, and Talebanfard (ITCS 2022), who observed that <span
+                    class="math"><var>α</var> ∈ [0.5, 1]</span>. To obtain our improved bounds, we analyse a
+                    covering LP that captures the <span class="math">Σ<sub>3</sub><sup>2</sup></span>-complexity up
+                    to polynomial factors. In particular, our lower bound is proved by constructing a feasible
+                    solution to the dual LP.</p>
                 </div>
               </div>
             </div>
@@ -1355,7 +1745,8 @@
               <div class="num">2.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">On the Security of Succinct Interactive Arguments from Vector Commitments</div>
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs2" title="Show or hide abstract">On the Security of Succinct Interactive Arguments from Vector Commitments</button>
                   <span class="titlelinks"><a href="https://eprint.iacr.org/2023/1737" target="_blank"
                       rel="noreferrer">[ePrint]</a> <a href="slides/kilian-pcp-iop.pdf" target="_blank"
                       rel="noreferrer">[slides]</a></span>
@@ -1365,6 +1756,27 @@
                   <a href="https://marceldallagnol.github.io/" target="_blank" rel="noreferrer">Marcel Dall'Agnol</a>,
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://spooner.cc/" target="_blank"
                     rel="noreferrer">Nicholas Spooner</a>
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2023/1737 -->
+                <div id="paperabs2" class="abstract paper-abstract">
+                  <p>We study the security of a fundamental family of succinct interactive arguments in the standard
+                    model, stemming from the works of Kilian (1992) and Ben-Sasson, Chiesa, and Spooner (“BCS”,
+                    2016). These constructions achieve succinctness by combining probabilistic proofs and vector
+                    commitments.</p>
+                  <p>Our first result concerns the succinct interactive argument of Kilian, realized with any
+                    probabilistically-checkable proof (PCP) and any vector commitment. We establish the tightest
+                    known bounds on the security of this protocol. Prior analyses incur large overheads, or assume
+                    restrictive properties of the underlying PCP.</p>
+                  <p>Our second result concerns an interactive variant of the BCS succinct non-interactive argument,
+                    which here we call IBCS, realized with any public-coin interactive oracle proof (IOP) and any
+                    vector commitment. We establish the first security bounds for the IBCS protocol. Prior works
+                    rely upon this protocol without proving its security; our result closes this gap.</p>
+                  <p>Finally, we study the capabilities and limitations of succinct arguments based on vector
+                    commitments. We show that a generalization of the IBCS protocol, which we call the <em>Finale
+                    protocol</em>, is secure when realized with any <em>public-query</em> IOP (a notion that we
+                    introduce) that satisfies a natural “random continuation sampling” (RCS) property. We also show
+                    a partial converse: if the Finale protocol satisfies the RCS property (which in particular
+                    implies its security), then so does the underlying public-query IOP.</p>
                 </div>
               </div>
             </div>
@@ -1378,8 +1790,8 @@
               <div class="num">1.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Linear-Time Probabilistic Proofs with Sublinear Verification for Algebraic Automata
-                    Over Every Field</div><span class="titlelinks"><a href="https://eprint.iacr.org/2022/1056"
+                  <button type="button" class="title paper-title-toggle" aria-expanded="false"
+                    aria-controls="paperabs1" title="Show or hide abstract">Linear-Time Probabilistic Proofs with Sublinear Verification for Algebraic Automata Over Every Field</button><span class="titlelinks"><a href="https://eprint.iacr.org/2022/1056"
                       target="_blank" rel="noreferrer">[ePrint]</a></span>
                 </div>
                 <div class="meta">
@@ -1387,6 +1799,34 @@
                     href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noreferrer">Alessandro Chiesa</a>,
                   <span class="author-emphasis">Ziyi Guan</span>, <a href="https://siqi-l.github.io/" target="_blank"
                     rel="noreferrer">Siqi Liu</a>
+                </div>
+                <!-- Abstract source: https://eprint.iacr.org/2022/1056 -->
+                <div id="paperabs1" class="abstract paper-abstract">
+                  <p>Interactive oracle proofs (IOPs) are a generalization of probabilistically checkable proofs
+                    that can be used to construct succinct arguments. Improvements in the efficiency of IOPs lead to
+                    improvements in the efficiency of succinct arguments. Key efficiency goals include achieving
+                    provers that run in linear time and verifiers that run in sublinear time, where the time
+                    complexity is with respect to the arithmetic complexity of proved computations over a finite
+                    field <span class="math">𝔽</span>.</p>
+                  <p>We consider the problem of constructing IOPs for any given finite field <span
+                    class="math">𝔽</span> with a linear-time prover and polylogarithmic query complexity. Several
+                    previous works have achieved these efficiency requirements with <span
+                    class="math"><var>O</var>(1)</span> soundness error for NP-complete languages. However,
+                    constrained by the soundness error of the sumcheck protocol underlying these constructions, the
+                    IOPs achieve linear prover time only for instances in fields of size <span class="math">Ω(log
+                    <var>n</var>)</span>. Recent work (Ron-Zewi and Rothblum, STOC 2022) overcomes this problem, but
+                    with linear verification time.</p>
+                  <p>We construct IOPs for the algebraic automata problem over any finite field <span
+                    class="math">𝔽</span> with a linear-time prover, polylogarithmic query complexity, and sublinear
+                    verification complexity. We additionally prove a similar result to Ron-Zewi and Rothblum for the
+                    NP-complete language R1CS using different techniques. The IOPs imply succinct arguments for
+                    (nondeterministic) arithmetic computations over any finite field with linear-time proving (given
+                    black-box access to a linear-time collision-resistant hash function).</p>
+                  <p>Inspired by recent constructions of reverse-multiplication-friendly embeddings, our IOP
+                    constructions embed problem instances over small fields into larger fields and adapt previous
+                    IOP constructions to the new instances. The IOP provers are modelled as random access machines
+                    and use precomputation techniques to achieve linear prover time. In this way, we avoid having to
+                    replace the sumcheck protocol.</p>
                 </div>
               </div>
             </div>
@@ -1404,16 +1844,60 @@
         <div class="flatitem">
           <div class="row">
             <div class="left">
+              <div class="num">13.</div>
+              <div>
+                <div class="titleline">
+                  <div class="title">Cryptographic Proof Systems for Scalable AI Oversight</div>
+                  <span class="titlelinks">
+                    <button type="button" class="talk-abstract-toggle" data-target="talkabs13"
+                      aria-expanded="false" aria-controls="talkabs13">[abstract]</button>
+                  </span>
+                </div>
+                <div class="meta">
+                  New York University · <a href="https://cs.nyu.edu/cryptosec/seminars/" target="_blank"
+                    rel="noreferrer">Crypto &amp; Sec Seminar</a> · Oct 20, 2026
+                </div>
+                <div id="talkabs13" class="abstract">
+                  <p>As AI systems become more capable, we need ways to make sure they do the right thing. This gives
+                    rise to a natural verification problem: can we check an AI system’s work much more efficiently
+                    than doing the work ourselves? Cryptography has developed proof systems for exactly this kind
+                    of succinct verification. In this talk, I will discuss proof systems that have been proposed
+                    for scalable AI verification, including SNARGs and MIPs, and compare their advantages and
+                    limitations. Based on joint works with Alessandro Chiesa, Yael Tauman Kalai, Zoe Xi, and
+                    Burcu Yıldız.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
+              <div class="num">12.</div>
+              <div>
+                <div class="titleline">
+                  <div class="title">The Cost of Rewinding for Succinct Arguments: Strict-Time Barriers and Expected-Time Security</div>
+                </div>
+                <div class="meta">
+                  Northeastern University · Oct 6, 2026
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flatitem">
+          <div class="row">
+            <div class="left">
               <div class="num">11.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Succinctness Requires Probabilistic Checking in the Quantum World</div>
+                  <div class="title">Time-Space Tradeoffs for Probabilistic Proofs</div>
                 </div>
                 <div class="meta">
                   Columbia University · Seminar · Sep 24, 2026<br>
-                  Stanford University · Seminar · Sep 2, 2026<br>
-                  UCSB · Information-Theoretic Cryptography · Aug 15, 2026<br>
-                  Sorbonne Université · Seminar · June 8, 2026
+                  Rome · <a href="https://zkproof.org/events/zkproof-8-rome/" target="_blank" rel="noreferrer">ZKProof 8</a> · May 10, 2026
                 </div>
               </div>
             </div>
@@ -1426,10 +1910,12 @@
               <div class="num">10.</div>
               <div>
                 <div class="titleline">
-                  <div class="title">Time-Space Tradeoffs for Probabilistic Proofs</div>
+                  <div class="title">Succinctness Requires Probabilistic Checking in the Quantum World</div>
                 </div>
                 <div class="meta">
-                  Rome · <a href="https://zkproof.org/events/zkproof-8-rome/" target="_blank" rel="noreferrer">ZKProof 8</a> · May 10, 2026
+                  Stanford University · Seminar · Sep 2, 2026<br>
+                  UCSB · Information-Theoretic Cryptography · Aug 15, 2026<br>
+                  Sorbonne Université · Seminar · June 8, 2026
                 </div>
               </div>
             </div>
@@ -1960,6 +2446,15 @@
   </main>
 
   <script>
+    // Paper titles toggle their abstracts; native buttons also support Enter and Space.
+    document.querySelectorAll("#papers .paper-title-toggle").forEach(title => {
+      title.addEventListener("click", () => {
+        const abstract = document.getElementById(title.getAttribute("aria-controls"));
+        const shown = abstract.classList.toggle("show");
+        title.setAttribute("aria-expanded", shown ? "true" : "false");
+      });
+    });
+
     // Talk abstract toggles
     document.querySelectorAll(".talk-abstract-toggle").forEach(toggle => {
       toggle.addEventListener("click", () => {
